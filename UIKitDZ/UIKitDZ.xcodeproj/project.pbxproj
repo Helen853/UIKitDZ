@@ -13,6 +13,7 @@
 		ED2076B02B71188900B3400C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076AE2B71188900B3400C /* Main.storyboard */; };
 		ED2076B22B71188A00B3400C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B12B71188A00B3400C /* Assets.xcassets */; };
 		ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */; };
+		ED2076BF2B712FEC00B3400C /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076BE2B712FEC00B3400C /* ViewController3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ED2076B12B71188A00B3400C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2076B42B71188A00B3400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2076B62B71188A00B3400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED2076BE2B712FEC00B3400C /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				ED2076A82B71188900B3400C /* AppDelegate.swift */,
 				ED2076AA2B71188900B3400C /* SceneDelegate.swift */,
 				ED2076AC2B71188900B3400C /* ViewController.swift */,
+				ED2076BE2B712FEC00B3400C /* ViewController3.swift */,
 				ED2076AE2B71188900B3400C /* Main.storyboard */,
 				ED2076B12B71188A00B3400C /* Assets.xcassets */,
 				ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				ED2076AD2B71188900B3400C /* ViewController.swift in Sources */,
 				ED2076A92B71188900B3400C /* AppDelegate.swift in Sources */,
+				ED2076BF2B712FEC00B3400C /* ViewController3.swift in Sources */,
 				ED2076AB2B71188900B3400C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
