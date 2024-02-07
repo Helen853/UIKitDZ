@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        showAlert()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -27,7 +26,9 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        showAlert()
+        showAlertInputName()
+        actionCalculatorButton()
+        actionGuessNumberButton()
     }
 
     func configHeaderImageView() {
@@ -46,7 +47,7 @@ class ViewController: UIViewController {
         grettingLabel.font = UIFont(name: "Verdana", size: 30)
         grettingLabel.numberOfLines = 2
         grettingLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        //grettingLabel.font = UIFont.fontNames(forFamilyName: "Verdana")
+        // grettingLabel.font = UIFont.fontNames(forFamilyName: "Verdana")
     }
 
     func configButton(nameButton: UIButton, title: String) {
@@ -62,7 +63,15 @@ class ViewController: UIViewController {
         guessNumberButton.backgroundColor = #colorLiteral(red: 0.6078431373, green: 0.4980392157, blue: 0.7098039216, alpha: 1)
     }
 
-    func showAlert() {
+    func actionCalculatorButton() {
+        calculatorButton.addTarget(self, action: #selector(showAlertInputNumber), for: .touchUpInside)
+    }
+
+    func actionGuessNumberButton() {
+        guessNumberButton.addTarget(self, action: #selector(showAlertGuessNumber), for: .touchUpInside)
+    }
+
+    func showAlertInputName() {
         let alertController = UIAlertController(
             title: "Пожалуйста \n представьтесь ",
             message: nil,
@@ -74,11 +83,114 @@ class ViewController: UIViewController {
             self.grettingLabel.text! += (textAlert?.text!)! + "!"
         }
 
-        alertController.addTextField { _ in }
-        // alertController.textFields?.append(
+        alertController.addTextField { title in
+            title.placeholder = "Введите имя"
+        }
         alertController.addAction(action)
         present(alertController, animated: true)
     }
-    
-    
+
+    @objc func showAlertInputNumber() {
+        let alertController = UIAlertController(title: "Введите ваши числа", message: nil, preferredStyle: .alert)
+
+        let actionChange = UIAlertAction(title: "Выбрать операцию", style: .default) { _ in
+            let numOne = alertController.textFields?.first
+            let numTwo = alertController.textFields?[1]
+            let sum = (Int(numOne?.text ?? "0") ?? 0) + (Int(numTwo?.text ?? "0") ?? 0)
+            let sub = (Int(numOne?.text ?? "0") ?? 0) - (Int(numTwo?.text ?? "0") ?? 0)
+            let mult = (Int(numOne?.text ?? "0") ?? 0) * (Int(numTwo?.text ?? "0") ?? 0)
+            let div = (Int(numOne?.text ?? "0") ?? 0) / (Int(numTwo?.text ?? "0") ?? 0)
+
+            self.showAlertAction(sum: sum, sub: sub, mult: mult, div: div)
+        }
+
+        let actionCancel = UIAlertAction(title: "Отмена", style: .default)
+
+        alertController.addTextField { title in
+            title.placeholder = "Число 1"
+        }
+        alertController.addTextField { title in
+            title.placeholder = "Число 2"
+        }
+
+        alertController.addAction(actionChange)
+        alertController.addAction(actionCancel)
+
+        present(alertController, animated: true)
+    }
+
+    func showAlertAction(sum: Int, sub: Int, mult: Int, div: Int) {
+        let alertController = UIAlertController(
+            title: "Выберите математическую операцию",
+            message: nil,
+            preferredStyle: .alert
+        )
+
+        let sum = UIAlertAction(title: "Сложить", style: .default) { _ in
+            self.showResultAlert(sum: sum)
+        }
+
+        let subtract = UIAlertAction(title: "Вычесть", style: .default) { _ in
+            self.showResultAlert(sum: sub)
+        }
+
+        let multiply = UIAlertAction(title: "Умножить", style: .default) { _ in
+            self.showResultAlert(sum: mult)
+        }
+
+        let divide = UIAlertAction(title: "Разделить", style: .default) { _ in
+            self.showResultAlert(sum: div)
+        }
+
+        let actionCancel = UIAlertAction(title: "Отмена", style: .cancel)
+
+        alertController.addAction(sum)
+        alertController.addAction(subtract)
+        alertController.addAction(multiply)
+        alertController.addAction(divide)
+        alertController.addAction(actionCancel)
+
+        present(alertController, animated: true)
+    }
+
+    func showResultAlert(sum: Int) {
+        let alertController = UIAlertController(title: "Ваш результат", message: String(sum), preferredStyle: .alert)
+        let actionCancel = UIAlertAction(title: "Отмена", style: .default)
+        let actionOk = UIAlertAction(title: "Ok", style: .cancel)
+
+        alertController.addAction(actionCancel)
+        alertController.addAction(actionOk)
+        present(alertController, animated: true)
+    }
+
+    @objc func showAlertGuessNumber() {
+        let alertController = UIAlertController(title: "Угадай число от 1 до 10", message: nil, preferredStyle: .alert)
+
+        let actionCancel = UIAlertAction(title: "Отмена", style: .default)
+        let actionOk = UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+            let inputNumber = alertController.textFields?.first
+            let randomNum = Int.random(in: 1 ... 10)
+            if randomNum == Int(inputNumber?.text ?? "0") {
+                self.showAlertTrue(title: "Поздравляю!", message: "Вы угадали число")
+            } else {
+                self.showAlertTrue(title: "Упс!", message: "Это неверный ответ")
+            }
+
+        })
+
+        alertController.addTextField { title in
+            title.placeholder = "Введите число"
+        }
+        alertController.addAction(actionCancel)
+        alertController.addAction(actionOk)
+        present(alertController, animated: true)
+    }
+
+    func showAlertTrue(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionOk = UIAlertAction(title: "Ok", style: .cancel)
+
+        alertController.addAction(actionOk)
+        present(alertController, animated: true)
+    }
 }
