@@ -13,6 +13,8 @@
 		ED2076B02B71188900B3400C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076AE2B71188900B3400C /* Main.storyboard */; };
 		ED2076B22B71188A00B3400C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B12B71188A00B3400C /* Assets.xcassets */; };
 		ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */; };
+		EDE32F072B753769009703C0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE32F062B753769009703C0 /* InfoViewController.swift */; };
+		EDE32F092B754C80009703C0 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE32F082B754C80009703C0 /* CheckViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		ED2076B12B71188A00B3400C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2076B42B71188A00B3400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2076B62B71188A00B3400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDE32F062B753769009703C0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		EDE32F082B754C80009703C0 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				ED2076AA2B71188900B3400C /* SceneDelegate.swift */,
 				ED2076AC2B71188900B3400C /* ViewController.swift */,
 				ED2076AE2B71188900B3400C /* Main.storyboard */,
+				EDE32F062B753769009703C0 /* InfoViewController.swift */,
+				EDE32F082B754C80009703C0 /* CheckViewController.swift */,
 				ED2076B12B71188A00B3400C /* Assets.xcassets */,
 				ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */,
 				ED2076B62B71188A00B3400C /* Info.plist */,
@@ -185,6 +191,8 @@
 			files = (
 				ED2076AD2B71188900B3400C /* ViewController.swift in Sources */,
 				ED2076A92B71188900B3400C /* AppDelegate.swift in Sources */,
+				EDE32F072B753769009703C0 /* InfoViewController.swift in Sources */,
+				EDE32F092B754C80009703C0 /* CheckViewController.swift in Sources */,
 				ED2076AB2B71188900B3400C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
