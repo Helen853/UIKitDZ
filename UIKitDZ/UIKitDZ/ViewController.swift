@@ -3,14 +3,16 @@
 
 import UIKit
 
-/// класс
-class ViewController: UIViewController {
+/// Класс отображающий функционал "Угадай число" и "Калькулятор"
+final class ViewController: UIViewController {
     // MARK: - Constants
 
     let headerImageView = UIImageView(frame: CGRect(x: 0, y: 37, width: 375, height: 818))
     let grettingLabel = UILabel(frame: CGRect(x: 0, y: 37, width: 375, height: 82))
     let guessNumberButton = UIButton(frame: CGRect(x: 82, y: 301, width: 150, height: 150))
     let calculatorButton = UIButton(frame: CGRect(x: 132, y: 507, width: 200, height: 200))
+    
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +36,14 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-
+    
+    //Метод настройки фона экрана
     private func configHeaderImageView() {
         view.addSubview(headerImageView)
         headerImageView.image = UIImage(named: "Background")
     }
 
+    //Метод настройки лейбла с приветствием
     private func configLabel() {
         view.addSubview(grettingLabel)
         grettingLabel.text = "Приветствую, \n"
@@ -51,6 +55,7 @@ class ViewController: UIViewController {
         grettingLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
     }
 
+    //Общий метод настройки кнопок
     private func configButton(nameButton: UIButton, title: String) {
         view.addSubview(nameButton)
         nameButton.setTitle(title, for: .normal)
@@ -59,19 +64,23 @@ class ViewController: UIViewController {
         nameButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
     }
 
+    //Метод задает цвет кнопкам
     private func configColorButton() {
         calculatorButton.backgroundColor = #colorLiteral(red: 0.3921568627, green: 0.7098039216, blue: 0.5098039216, alpha: 1)
         guessNumberButton.backgroundColor = #colorLiteral(red: 0.6078431373, green: 0.4980392157, blue: 0.7098039216, alpha: 1)
     }
 
+    //Метод при нажатии на кнопку "Калькулятор" вызовет алерт
     private func actionCalculatorButton() {
         calculatorButton.addTarget(self, action: #selector(showAlertInputNumber), for: .touchUpInside)
     }
 
+    //Метод при нажатии на кнопку "Угадай число" вызовет алерт
     private func actionGuessNumberButton() {
         guessNumberButton.addTarget(self, action: #selector(showAlertGuessNumber), for: .touchUpInside)
     }
 
+    //Метод появления алерта с полем ввода имени пользователя
     private func showAlertInputName() {
         let alertController = UIAlertController(
             title: "Пожалуйста \n представьтесь ",
@@ -92,6 +101,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
 
+    //Метод появления алерта с полем ввода чисел для выполнений математических операций
     @objc private func showAlertInputNumber() {
         let alertController = UIAlertController(
             title: "Введите ваши числа",
@@ -125,6 +135,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
 
+    //Метод появления алерта с выбором математических операций
     private func showAlertAction(sum: Int, sub: Int, mult: Int, div: Int) {
         let alertController = UIAlertController(
             title: "Выберите математическую операцию",
@@ -158,7 +169,8 @@ class ViewController: UIViewController {
 
         present(alertController, animated: true)
     }
-
+ 
+    //Метод отображающий результат вычисления
     private func showResultAlert(result: Int) {
         let alertController = UIAlertController(title: "Ваш результат", message: String(result), preferredStyle: .alert)
         let actionCancel = UIAlertAction(title: "Отмена", style: .default)
@@ -169,6 +181,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
 
+    //Метод появления алерта с полем ввода числа для угадывания
     @objc private func showAlertGuessNumber() {
         let alertController = UIAlertController(
             title: "Угадай число от 1 до 10",
@@ -200,6 +213,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
 
+    //Общий метод для отображения алерта по результатам угадывания числа
     private func showAlertTrue(title: String, message: String) {
         let alertController = UIAlertController(
             title: title,
