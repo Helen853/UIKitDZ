@@ -7,6 +7,8 @@ import UIKit
 class ViewController: UIViewController {
     // MARK: - IBOutlets
 
+    @IBOutlet var enterButtton: UIButton!
+    @IBOutlet var loginTextField: UITextField!
     @IBOutlet var vectorButton: UIButton!
     var isOpenPassword = false
 
@@ -16,6 +18,16 @@ class ViewController: UIViewController {
 
     @IBAction func openPassword(_ sender: Any) {
         vectorButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleKeyboardDidShow),
+            name: UIResponder.keyboardDidHideNotification,
+            object: nil
+        )
     }
 
     @objc func tapButton() {
@@ -30,5 +42,20 @@ class ViewController: UIViewController {
             vectorButton.setImage(UIImage(named: "VectorOpen"), for: .normal)
             passwordTextField.isSecureTextEntry = false
         }
+    }
+
+    @objc func handleKeyboardDidShow() {
+        guard
+            let passwordTextFieldText = passwordTextField.text,
+            let loginTextFieldText = loginTextField.text,
+            !passwordTextFieldText.isEmpty,
+            !loginTextFieldText.isEmpty
+        else {
+            enterButtton.isEnabled = false
+            enterButtton.alpha = 0.5
+            return
+        }
+        enterButtton.isEnabled = true
+        enterButtton.alpha = 1
     }
 }
