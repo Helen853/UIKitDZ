@@ -5,10 +5,12 @@ import UIKit
 
 /// класс
 class ViewController: UIViewController {
-    var headerImageView = UIImageView(frame: CGRect(x: 0, y: 37, width: 375, height: 818))
-    var grettingLabel = UILabel(frame: CGRect(x: 0, y: 37, width: 375, height: 82))
-    var guessNumberButton = UIButton(frame: CGRect(x: 82, y: 301, width: 150, height: 150))
-    var calculatorButton = UIButton(frame: CGRect(x: 132, y: 507, width: 200, height: 200))
+    
+    // MARK: - Constants
+    let headerImageView = UIImageView(frame: CGRect(x: 0, y: 37, width: 375, height: 818))
+    let grettingLabel = UILabel(frame: CGRect(x: 0, y: 37, width: 375, height: 82))
+    let guessNumberButton = UIButton(frame: CGRect(x: 82, y: 301, width: 150, height: 150))
+    let calculatorButton = UIButton(frame: CGRect(x: 132, y: 507, width: 200, height: 200))
 
     override func viewDidLoad() {
         super.viewDidLoad()
