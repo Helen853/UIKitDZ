@@ -5,8 +5,8 @@ import UIKit
 
 /// класс
 class ViewController: UIViewController {
-    
     // MARK: - Constants
+
     let headerImageView = UIImageView(frame: CGRect(x: 0, y: 37, width: 375, height: 818))
     let grettingLabel = UILabel(frame: CGRect(x: 0, y: 37, width: 375, height: 82))
     let guessNumberButton = UIButton(frame: CGRect(x: 82, y: 301, width: 150, height: 150))
@@ -32,13 +32,15 @@ class ViewController: UIViewController {
         actionCalculatorButton()
         actionGuessNumberButton()
     }
+    
+    // MARK: - Private Methods
 
-    func configHeaderImageView() {
+    private func configHeaderImageView() {
         view.addSubview(headerImageView)
         headerImageView.image = UIImage(named: "Background")
     }
 
-    func configLabel() {
+    private func configLabel() {
         view.addSubview(grettingLabel)
         grettingLabel.text = "Приветствую, \n"
         grettingLabel.textAlignment = .center
@@ -49,7 +51,7 @@ class ViewController: UIViewController {
         grettingLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
     }
 
-    func configButton(nameButton: UIButton, title: String) {
+    private func configButton(nameButton: UIButton, title: String) {
         view.addSubview(nameButton)
         nameButton.setTitle(title, for: .normal)
         nameButton.layer.cornerRadius = 30
@@ -57,20 +59,20 @@ class ViewController: UIViewController {
         nameButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
     }
 
-    func configColorButton() {
+    private func configColorButton() {
         calculatorButton.backgroundColor = #colorLiteral(red: 0.3921568627, green: 0.7098039216, blue: 0.5098039216, alpha: 1)
         guessNumberButton.backgroundColor = #colorLiteral(red: 0.6078431373, green: 0.4980392157, blue: 0.7098039216, alpha: 1)
     }
 
-    func actionCalculatorButton() {
+    private func actionCalculatorButton() {
         calculatorButton.addTarget(self, action: #selector(showAlertInputNumber), for: .touchUpInside)
     }
 
-    func actionGuessNumberButton() {
+    private func actionGuessNumberButton() {
         guessNumberButton.addTarget(self, action: #selector(showAlertGuessNumber), for: .touchUpInside)
     }
 
-    func showAlertInputName() {
+    private func showAlertInputName() {
         let alertController = UIAlertController(
             title: "Пожалуйста \n представьтесь ",
             message: nil,
@@ -90,7 +92,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
 
-    @objc func showAlertInputNumber() {
+    @objc private func showAlertInputNumber() {
         let alertController = UIAlertController(
             title: "Введите ваши числа",
             message: nil,
@@ -123,7 +125,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
 
-    func showAlertAction(sum: Int, sub: Int, mult: Int, div: Int) {
+    private func showAlertAction(sum: Int, sub: Int, mult: Int, div: Int) {
         let alertController = UIAlertController(
             title: "Выберите математическую операцию",
             message: nil,
@@ -157,7 +159,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
 
-    func showResultAlert(result: Int) {
+    private func showResultAlert(result: Int) {
         let alertController = UIAlertController(title: "Ваш результат", message: String(result), preferredStyle: .alert)
         let actionCancel = UIAlertAction(title: "Отмена", style: .default)
         let actionOk = UIAlertAction(title: "Ok", style: .cancel)
@@ -167,7 +169,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
 
-    @objc func showAlertGuessNumber() {
+    @objc private func showAlertGuessNumber() {
         let alertController = UIAlertController(
             title: "Угадай число от 1 до 10",
             message: nil,
@@ -198,7 +200,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
 
-    func showAlertTrue(title: String, message: String) {
+    private func showAlertTrue(title: String, message: String) {
         let alertController = UIAlertController(
             title: title,
             message: message,
