@@ -3,22 +3,20 @@
 
 import UIKit
 
-/// класс
-class ViewController: UIViewController {
+/// Стартовый класс с авторизацией
+final class ViewController: UIViewController {
     // MARK: - IBOutlets
 
     @IBOutlet var enterButtton: UIButton!
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var vectorButton: UIButton!
-    var isOpenPassword = false
-
     @IBOutlet var passwordTextField: UITextField!
+    
+    // MARK: - Private Properties
+    
+    private var isOpenPassword = false
 
-    // MARK: - Public Methods
-
-    @IBAction func openPassword(_ sender: Any) {
-        vectorButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-    }
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +28,15 @@ class ViewController: UIViewController {
         )
     }
     
-    // MARK: - Private Methods
+    // MARK: - IBAction
 
+    @IBAction func openPassword(_ sender: Any) {
+        vectorButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+    }
+    
+    // MARK: - Private Methods
+    
+    //Метод для отображения введенного пароля
     @objc private func tapButton() {
         switch isOpenPassword {
         case false:
@@ -45,7 +50,8 @@ class ViewController: UIViewController {
             passwordTextField.isSecureTextEntry = false
         }
     }
-
+    
+    //Метод проверки поля ввода на наличие введенных символов
     @objc private func handleKeyboardDidShow() {
         guard
             let passwordTextFieldText = passwordTextField.text,

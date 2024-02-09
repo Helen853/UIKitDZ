@@ -3,4 +3,5 @@
 
 import UIKit
 
-class CheckViewController: UIViewController {}
+//Класс отображающий чек
+final class CheckViewController: UIViewController {}

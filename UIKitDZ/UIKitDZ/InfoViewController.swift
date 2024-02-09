@@ -3,9 +3,12 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+///Класс отображающий информацию о заказе
+final class InfoViewController: UIViewController {
+    
     // MARK: - Public Methods
-
+    
+    //Метод перехода на экран "Чек" при нажатии алерта
     @IBAction func showAlert(_ sender: Any) {
         let alertController = UIAlertController(
             title: "Выставить счет?",
