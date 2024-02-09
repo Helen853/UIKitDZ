@@ -29,8 +29,10 @@ class ViewController: UIViewController {
             object: nil
         )
     }
+    
+    // MARK: - Private Methods
 
-    @objc func tapButton() {
+    @objc private func tapButton() {
         switch isOpenPassword {
         case false:
             isOpenPassword = true
@@ -44,7 +46,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @objc func handleKeyboardDidShow() {
+    @objc private func handleKeyboardDidShow() {
         guard
             let passwordTextFieldText = passwordTextField.text,
             let loginTextFieldText = loginTextField.text,
