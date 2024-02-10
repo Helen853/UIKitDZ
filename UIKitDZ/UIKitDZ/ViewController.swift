@@ -30,14 +30,15 @@ final class ViewController: UIViewController {
     
     // MARK: - IBAction
 
-    @IBAction private func openPassword(_ sender: Any) {
-        vectorButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+    //Метод добавляет нажатие по кнопке с глазиком
+    @IBAction private func tapButton(_ sender: Any) {
+        vectorButton.addTarget(self, action: #selector(openPassword), for: .touchUpInside)
     }
     
     // MARK: - Private Methods
     
     //Метод для отображения введенного пароля
-    @objc private func tapButton() {
+    @objc private func openPassword() {
         switch isOpenPassword {
         case false:
             isOpenPassword = true
