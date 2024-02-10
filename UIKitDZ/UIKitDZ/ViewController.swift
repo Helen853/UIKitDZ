@@ -7,10 +7,10 @@ import UIKit
 final class ViewController: UIViewController {
     // MARK: - IBOutlets
 
-    @IBOutlet var enterButtton: UIButton!
-    @IBOutlet var loginTextField: UITextField!
-    @IBOutlet var vectorButton: UIButton!
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet private var enterButtton: UIButton!
+    @IBOutlet private var loginTextField: UITextField!
+    @IBOutlet private var vectorButton: UIButton!
+    @IBOutlet private var passwordTextField: UITextField!
     
     // MARK: - Private Properties
     
@@ -30,7 +30,7 @@ final class ViewController: UIViewController {
     
     // MARK: - IBAction
 
-    @IBAction func openPassword(_ sender: Any) {
+    @IBAction private func openPassword(_ sender: Any) {
         vectorButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
     }
     
