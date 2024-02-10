@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// класс
+/// Класс отображаающий экран "слова наоборот"
 class ViewController: UIViewController {
     // MARK: - Constants
 
@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     let returnLabel = UILabel(frame: CGRect(x: 50, y: 282, width: 275, height: 57))
     let wordReservedLabel = UILabel(frame: CGRect(x: 50, y: 339, width: 275, height: 57))
 
+    // MARK: - Life Cycle
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.backgroundColor = .white
@@ -21,6 +23,7 @@ class ViewController: UIViewController {
 
     // MARK: - Private Methods
 
+    //Метод настраивающий кнопку "Начать"
     private func configBeginLabel(top: Int) {
         beginButton.frame = CGRect(x: 20, y: top, width: 335, height: 44)
         view.addSubview(beginButton)
@@ -34,6 +37,7 @@ class ViewController: UIViewController {
         beginButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
     }
 
+    //Метод появление алерта с полем для ввода слова
     @objc private func showAlert() {
         let alertController = UIAlertController(title: "Введите ваше слово", message: nil, preferredStyle: .alert)
         let actionCancel = UIAlertAction(title: "Отмена", style: .default)
@@ -55,6 +59,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
 
+    //Метод настройки лейбла  "Вы ввели слово"
     private func configInputLabel() {
         view.addSubview(inputLabel)
         inputLabel.text = "Вы ввели слово"
@@ -63,6 +68,7 @@ class ViewController: UIViewController {
         inputLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
     }
 
+    //Метод настройки лейбла "Что получилось"
     private func configReturnLabel() {
         view.addSubview(returnLabel)
         returnLabel.text = "А вот что получится, если читать справа налево"
@@ -72,6 +78,8 @@ class ViewController: UIViewController {
         returnLabel.numberOfLines = 2
     }
 
+    
+    //Метод настройки лейбла, отображающего введенное слово
     private func configWordLabel(word: String?) {
         view.addSubview(wordLabel)
         wordLabel.text = word ?? " "
@@ -80,6 +88,7 @@ class ViewController: UIViewController {
         wordLabel.textAlignment = .center
     }
 
+    //Метод настройки лейбла, отображающего слово наоборот
     private func configWordReversedLabel(word: String?) {
         view.addSubview(wordReservedLabel)
         let inputWord = word ?? " "
