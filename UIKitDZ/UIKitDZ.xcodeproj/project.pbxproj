@@ -13,6 +13,11 @@
 		ED2076B02B71188900B3400C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076AE2B71188900B3400C /* Main.storyboard */; };
 		ED2076B22B71188A00B3400C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B12B71188A00B3400C /* Assets.xcassets */; };
 		ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */; };
+		EDCB7CC62B797C0900872579 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCB7CC52B797C0900872579 /* TrackViewController.swift */; };
+		EDCB7CCA2B79E35800872579 /* J. Cole - Photograph.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDCB7CC72B79E35800872579 /* J. Cole - Photograph.mp3 */; };
+		EDCB7CCB2B79E35800872579 /* Travis Scott - CANT SAY.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDCB7CC82B79E35800872579 /* Travis Scott - CANT SAY.mp3 */; };
+		EDCB7CCC2B79E35800872579 /* xxxtentacion - jocelyn flowers.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDCB7CC92B79E35800872579 /* xxxtentacion - jocelyn flowers.mp3 */; };
+		EDCB7CCE2B79F17900872579 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCB7CCD2B79F17900872579 /* Track.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		ED2076B12B71188A00B3400C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2076B42B71188A00B3400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2076B62B71188A00B3400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDCB7CC52B797C0900872579 /* TrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
+		EDCB7CC72B79E35800872579 /* J. Cole - Photograph.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "J. Cole - Photograph.mp3"; path = "../../../J. Cole - Photograph.mp3"; sourceTree = "<group>"; };
+		EDCB7CC82B79E35800872579 /* Travis Scott - CANT SAY.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Travis Scott - CANT SAY.mp3"; path = "../../../Travis Scott - CANT SAY.mp3"; sourceTree = "<group>"; };
+		EDCB7CC92B79E35800872579 /* xxxtentacion - jocelyn flowers.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "xxxtentacion - jocelyn flowers.mp3"; path = "../../../xxxtentacion - jocelyn flowers.mp3"; sourceTree = "<group>"; };
+		EDCB7CCD2B79F17900872579 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +69,12 @@
 				ED2076A82B71188900B3400C /* AppDelegate.swift */,
 				ED2076AA2B71188900B3400C /* SceneDelegate.swift */,
 				ED2076AC2B71188900B3400C /* ViewController.swift */,
+				EDCB7CCD2B79F17900872579 /* Track.swift */,
+				EDCB7CC52B797C0900872579 /* TrackViewController.swift */,
 				ED2076AE2B71188900B3400C /* Main.storyboard */,
+				EDCB7CC72B79E35800872579 /* J. Cole - Photograph.mp3 */,
+				EDCB7CC82B79E35800872579 /* Travis Scott - CANT SAY.mp3 */,
+				EDCB7CC92B79E35800872579 /* xxxtentacion - jocelyn flowers.mp3 */,
 				ED2076B12B71188A00B3400C /* Assets.xcassets */,
 				ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */,
 				ED2076B62B71188A00B3400C /* Info.plist */,
@@ -127,8 +142,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCB7CCB2B79E35800872579 /* Travis Scott - CANT SAY.mp3 in Resources */,
 				ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */,
+				EDCB7CCC2B79E35800872579 /* xxxtentacion - jocelyn flowers.mp3 in Resources */,
 				ED2076B22B71188A00B3400C /* Assets.xcassets in Resources */,
+				EDCB7CCA2B79E35800872579 /* J. Cole - Photograph.mp3 in Resources */,
 				ED2076B02B71188900B3400C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +201,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCB7CC62B797C0900872579 /* TrackViewController.swift in Sources */,
+				EDCB7CCE2B79F17900872579 /* Track.swift in Sources */,
 				ED2076AD2B71188900B3400C /* ViewController.swift in Sources */,
 				ED2076A92B71188900B3400C /* AppDelegate.swift in Sources */,
 				ED2076AB2B71188900B3400C /* SceneDelegate.swift in Sources */,
