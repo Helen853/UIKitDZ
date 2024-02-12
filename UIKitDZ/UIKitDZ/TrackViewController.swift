@@ -4,11 +4,10 @@
 import AVFoundation
 import UIKit
 
-//Класс отображающий проигрывание трека
+// Класс отображающий проигрывание трека
 final class TrackViewController: UIViewController {
-
     // MARK: - IBOutlets
-    
+
     @IBOutlet private var trackImageView: UIImageView!
 
     @IBOutlet private var nameTrackLabel: UILabel!
@@ -28,16 +27,16 @@ final class TrackViewController: UIViewController {
             valumeSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
         }
     }
-    
+
     // MARK: - Private Properties
-    
+
     private var player = AVAudioPlayer()
     private var isPlay = false
     private var album: [Track] = []
     private var currentTrackIndex = 0
 
     // MARK: - Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         longTrackSlider.value = 0.0
@@ -45,8 +44,8 @@ final class TrackViewController: UIViewController {
     }
 
     // MARK: - Public Methods
-    
-    //Метод настройки составляющих трека (картинка, автор, название песни)
+
+    // Метод настройки составляющих трека (картинка, автор, название песни)
     func setupTrackViewSreen(album: [Track], trackIndex: Int) {
         self.album = album
         currentTrackIndex = trackIndex
@@ -54,20 +53,20 @@ final class TrackViewController: UIViewController {
         nameTrackLabel.text = album[trackIndex].autorName
         nameSingLabel.text = album[trackIndex].songName
     }
-    
+
     // MARK: - IBAction
 
-    //Метод задает громкость плееру
+    // Метод задает громкость плееру
     @IBAction private func switchVolume(_ sender: Any) {
         player.volume = valumeSlider.value
     }
 
-    //Метод воспроизводит трек
+    // Метод воспроизводит трек
     @IBAction private func playSing(_ sender: Any) {
         playTrack()
     }
-    
-    //Метод задает значение слайдеру в зависимости от дительности трека
+
+    // Метод задает значение слайдеру в зависимости от дительности трека
     @IBAction private func rewindSing(_ sender: UISlider) {
         longTrackSlider.minimumValue = 0.0
         if sender == longTrackSlider {
@@ -75,7 +74,7 @@ final class TrackViewController: UIViewController {
         }
     }
 
-    //Метод переключения треков
+    // Метод переключения треков
     @IBAction private func switchTrack(_ sender: Any) {
         if currentTrackIndex < album.count - 1 {
             currentTrackIndex += 1
@@ -90,15 +89,15 @@ final class TrackViewController: UIViewController {
         playTrack()
     }
 
-    //Метод перехода на предыдущий экран при нажатии на крестик
+    // Метод перехода на предыдущий экран при нажатии на крестик
     @IBAction private func closeView(_ sender: Any) {
         dismiss(animated: true)
     }
 
-    // MARK: - Private Methods
-    
-    //Метод воспроизведения трека при нажатии на кнопку плей и его настройка
-    private func playTrack() {
+    // MARK: - Public Methods
+
+    // Метод воспроизведения трека при нажатии на кнопку плей и его настройка
+    func playTrack() {
         let nameTrackLabelText = album[currentTrackIndex].autorName
         let nameSingLabelText = album[currentTrackIndex].songName
         do {
@@ -108,7 +107,13 @@ final class TrackViewController: UIViewController {
             ) {
                 try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
                 longTrackSlider.maximumValue = Float(player.duration)
-                let timer = Timer(timeInterval: 0.5, target: self, selector: #selector(setupItem), userInfo: nil, repeats: true)
+                let timer = Timer(
+                    timeInterval: 0.5,
+                    target: self,
+                    selector: #selector(setupItem),
+                    userInfo: nil,
+                    repeats: true
+                )
                 RunLoop.main.add(timer, forMode: .common)
             }
         } catch {
@@ -127,12 +132,13 @@ final class TrackViewController: UIViewController {
         }
     }
 
-    
-// Метод задает параметры лейблу и показывает время воспроизведения трека
+    // MARK: - Private Methods
+
+    // Метод задает параметры лейблу и показывает время воспроизведения трека
     @objc private func setupItem() {
         let currentTime = Int(player.currentTime)
-            let minutes = currentTime/60
-            let seconds = currentTime - minutes * 60
-            longSingLabel.text = NSString(format: "%02d:%02d", minutes,seconds) as String
+        let minutes = currentTime / 60
+        let seconds = currentTime - minutes * 60
+        longSingLabel.text = NSString(format: "%02d:%02d", minutes, seconds) as String
     }
 }

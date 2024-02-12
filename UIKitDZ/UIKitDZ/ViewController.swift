@@ -5,17 +5,16 @@ import UIKit
 
 /// Стартовый класс отображающий плэйлист
 final class ListViewController: UIViewController {
-    
     // MARK: - Constants
-    
+
     let album = [
         Track(imageName: "cat", autorName: "J. Cole", songName: "Photograph"),
         Track(imageName: "travis", autorName: "Travis Scott", songName: "CANT SAY"),
         Track(imageName: "xxx", autorName: "xxxtentacion", songName: "jocelyn flowers")
     ]
-    
+
     // MARK: - IBOutlets
-    
+
     @IBOutlet private var jcoleImageView: UIImageView!
     @IBOutlet private var songNameLabel: UILabel!
     @IBOutlet private var coleAuthorLabel: UILabel!
@@ -32,15 +31,15 @@ final class ListViewController: UIViewController {
     }
 
     // MARK: - Private Methods
-    
-    //Метод добавляет распознование жеста при нажатии на картинку трека
+
+    // Метод добавляет распознование жеста при нажатии на картинку трека
     private func tapImage() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(segueToTrack))
         jcoleImageView.addGestureRecognizer(gesture)
         jcoleImageView.isUserInteractionEnabled = true
     }
 
-    //Метод перехода на Экран воспроизведения трека
+    // Метод перехода на Экран воспроизведения трека
     @objc private func segueToTrack() {
         _ = UIStoryboard(name: "Main", bundle: nil)
         guard
