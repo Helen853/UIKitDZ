@@ -3,7 +3,10 @@
 
 import UIKit
 
+//Класс для введения информации о человеке
 final class InfoViewController: UIViewController {
+    // MARK: - Constants
+
     let avatarImageView = UIImageView()
     let changeLabel = UILabel()
 
@@ -34,6 +37,8 @@ final class InfoViewController: UIViewController {
 
     let gender = ["Male", "Female"]
 
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -52,13 +57,17 @@ final class InfoViewController: UIViewController {
         setupButton()
     }
 
-    func configAvatar() {
+    // MARK: - Private Methods
+
+    //Метод настройки аватара
+    private func configAvatar() {
         view.addSubview(avatarImageView)
         avatarImageView.frame = CGRect(x: 125, y: 134, width: 125, height: 125)
         avatarImageView.image = UIImage(named: "Эллипс 2-5")
     }
 
-    func configChangeLabel() {
+    //Метод настройки лейбла для выбора фото
+    private func configChangeLabel() {
         view.addSubview(changeLabel)
         changeLabel.frame = CGRect(x: 125, y: 267, width: 125, height: 20)
         changeLabel.text = "Change photo"
@@ -66,14 +75,16 @@ final class InfoViewController: UIViewController {
         changeLabel.textColor = #colorLiteral(red: 0, green: 0.5694641471, blue: 1, alpha: 1)
     }
 
-    func configLabel(nameLabel: UILabel, text: String, top: CGFloat) {
+    //Общий метод настройки лейблов
+    private func configLabel(nameLabel: UILabel, text: String, top: CGFloat) {
         view.addSubview(nameLabel)
         nameLabel.text = text
         nameLabel.frame = CGRect(x: 20, y: top, width: 175, height: 19)
         nameLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
     }
 
-    func setUpInfoLabel() {
+    //Метод настройки лейблов для полей ввода
+    private func setUpInfoLabel() {
         configLabel(nameLabel: nameLabel, text: "Name Surname", top: 307)
         configLabel(nameLabel: birthdayLabel, text: "Birthday", top: 382)
         configLabel(nameLabel: ageLabel, text: "Age", top: 457)
@@ -81,13 +92,15 @@ final class InfoViewController: UIViewController {
         configLabel(nameLabel: telegramLabel, text: "Telegram", top: 605)
     }
 
-    func configTextField(nameTextField: UITextField, placeholderText: String, top: CGFloat) {
+    //Общий метод настройки текстфилдов
+    private func configTextField(nameTextField: UITextField, placeholderText: String, top: CGFloat) {
         view.addSubview(nameTextField)
         nameTextField.placeholder = placeholderText
         nameTextField.frame = CGRect(x: 20, y: top, width: 250, height: 17)
     }
 
-    func setupTextfield() {
+    //Метода устанавливающий характеристики полям ввода
+    private func setupTextfield() {
         configTextField(nameTextField: nameTextField, placeholderText: "Typing Name Surname", top: 335)
         configTextField(nameTextField: birthTextField, placeholderText: "Typing Date of Birth", top: 411)
         configTextField(nameTextField: ageTextField, placeholderText: "Typing age", top: 486)
@@ -95,13 +108,15 @@ final class InfoViewController: UIViewController {
         configTextField(nameTextField: telegramTextField, placeholderText: "Typing Telegram", top: 634)
     }
 
-    func configLine(nameLine: UIView, top: CGFloat) {
+    //Общий метод для настройки линий под полями ввода
+    private func configLine(nameLine: UIView, top: CGFloat) {
         view.addSubview(nameLine)
         nameLine.frame = CGRect(x: 20, y: top, width: 335, height: 1)
         nameLine.backgroundColor = #colorLiteral(red: 0.8500393629, green: 0.8703018427, blue: 0.8895121813, alpha: 1)
     }
 
-    func setupLine() {
+    //Метод задает параметры линиям
+    private func setupLine() {
         configLine(nameLine: lineView1, top: 361)
         configLine(nameLine: lineView2, top: 436)
         configLine(nameLine: lineView3, top: 511)
@@ -109,7 +124,8 @@ final class InfoViewController: UIViewController {
         configLine(nameLine: lineView5, top: 659)
     }
 
-    func configBirth() {
+    //Метод отображающий календарь при вводе даты рождения. Настройка кнопки "done"
+    private func configBirth() {
         birthTextField.inputView = datePicker
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .wheels
@@ -124,14 +140,8 @@ final class InfoViewController: UIViewController {
         birthTextField.inputAccessoryView = toolBar
     }
 
-    @objc func doneAction() {
-        let formater = DateFormatter()
-        formater.dateFormat = "dd.MM.yyyy"
-        birthTextField.text = formater.string(from: datePicker.date)
-        view.endEditing(true)
-    }
-
-    func configAgeField() {
+    //Метод отображающий пикер с выбором чисел при вводе в поле возраста. Настройка кнопки "ОК" на пикере
+    private func configAgeField() {
         ageTextField.inputView = agePicker
         agePicker.dataSource = self
         agePicker.delegate = self
@@ -147,11 +157,8 @@ final class InfoViewController: UIViewController {
         ageTextField.inputAccessoryView = toolBar
     }
 
-    @objc func okAction() {
-        ageTextField.resignFirstResponder()
-    }
-
-    func configGenderField() {
+    //Метод отображающий пикер с выбором пола при вводе в поле Gender, настройка кнопки "ОК" для пикера
+    private func configGenderField() {
         genderTextField.inputView = genderPicker
         genderPicker.dataSource = self
         genderPicker.delegate = self
@@ -167,15 +174,13 @@ final class InfoViewController: UIViewController {
         genderTextField.inputAccessoryView = toolBar
     }
 
-    @objc func okActionGender() {
-        genderTextField.resignFirstResponder()
-    }
-
-    func configTelegramField() {
+    //Метода настройки делегата для поля ввода телеграмма
+    private func configTelegramField() {
         telegramTextField.delegate = self
     }
 
-    func showAlert() {
+    //Метод отображающий алерт при введение в поле телеграмма
+    private func showAlert() {
         let alertController = UIAlertController(title: "Please enter Telegram", message: nil, preferredStyle: .alert)
         let actionCancel = UIAlertAction(title: "Cancel", style: .default)
         let actionOk = UIAlertAction(title: "OK", style: .cancel) { _ in
@@ -193,7 +198,8 @@ final class InfoViewController: UIViewController {
         present(alertController, animated: true)
     }
 
-    func configButton(nameButton: UIButton, text: String) {
+    //Общий метод для настройки кнопок Отмена и Добавить
+    private func configButton(nameButton: UIButton, text: String) {
         view.addSubview(nameButton)
         nameButton.setTitle(text, for: .normal)
         nameButton.setTitleColor(#colorLiteral(red: 0, green: 0.5694641471, blue: 1, alpha: 1), for: .normal)
@@ -201,17 +207,39 @@ final class InfoViewController: UIViewController {
         nameButton.addTarget(self, action: #selector(tapCancel), for: .touchUpInside)
     }
 
-    func setupButton() {
+    //Метод задает параметры кнопкам Отмена и Добавить
+    private func setupButton() {
         configButton(nameButton: cancelButton, text: "Cancel")
         configButton(nameButton: addButton, text: "Add")
         cancelButton.frame = CGRect(x: 20, y: 20, width: 50, height: 20)
         addButton.frame = CGRect(x: 325, y: 20, width: 30, height: 20)
     }
 
-    @objc func tapCancel() {
+    //Метод перехода на предыдущий экран при нажатии на кнопку Сancel
+    @objc private func tapCancel() {
         dismiss(animated: true)
     }
+
+    //Метод задает параметры для отображения текста в поле ввода даты рождения, после выбора даты в пикере
+    @objc private func doneAction() {
+        let formater = DateFormatter()
+        formater.dateFormat = "dd.MM.yyyy"
+        birthTextField.text = formater.string(from: datePicker.date)
+        view.endEditing(true)
+    }
+
+    //Метод отображения текста для поля Gender
+    @objc private func okActionGender() {
+        genderTextField.resignFirstResponder()
+    }
+
+    //Метод отображения текста  для поля возраста
+    @objc private func okAction() {
+        ageTextField.resignFirstResponder()
+    }
 }
+
+//Расширения для реализации протоколов делегата и датасорса
 
 extension InfoViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
