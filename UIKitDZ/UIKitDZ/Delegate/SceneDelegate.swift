@@ -14,10 +14,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let catalogVC = СatalogViewController()
+        let bascetVC = BasketViewController()
+        let profileVC = ProfileViewController()
 
         let window = UIWindow(windowScene: windowScene)
-        let navigationController = UINavigationController(rootViewController: catalogVC)
-        window.rootViewController = navigationController
+        let tabBarVC = UITabBarController()
+        tabBarVC.setViewControllers([catalogVC, bascetVC, profileVC], animated: true)
+        window.rootViewController = tabBarVC
         self.window = window
         window.makeKeyAndVisible()
     }
