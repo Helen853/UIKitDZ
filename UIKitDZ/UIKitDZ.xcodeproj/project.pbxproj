@@ -7,20 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0A3EB92B7CD2FF00199698 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0A3EB82B7CD2FF00199698 /* BasketViewController.swift */; };
+		ED0A3EBB2B7CD34300199698 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0A3EBA2B7CD34300199698 /* ProfileViewController.swift */; };
+		ED0A3EC02B7CD3BC00199698 /* ShoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0A3EBF2B7CD3BC00199698 /* ShoesViewController.swift */; };
+		ED0A3EC22B7CD3D200199698 /* SizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0A3EC12B7CD3D200199698 /* SizeViewController.swift */; };
+		ED0A3EC42B7CD42D00199698 /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0A3EC32B7CD42D00199698 /* UserDataViewController.swift */; };
 		ED2076A92B71188900B3400C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076A82B71188900B3400C /* AppDelegate.swift */; };
 		ED2076AB2B71188900B3400C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076AA2B71188900B3400C /* SceneDelegate.swift */; };
-		ED2076AD2B71188900B3400C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076AC2B71188900B3400C /* ViewController.swift */; };
-		ED2076B02B71188900B3400C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076AE2B71188900B3400C /* Main.storyboard */; };
+		ED2076AD2B71188900B3400C /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076AC2B71188900B3400C /* CatalogViewController.swift */; };
 		ED2076B22B71188A00B3400C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B12B71188A00B3400C /* Assets.xcassets */; };
 		ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED0A3EB82B7CD2FF00199698 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		ED0A3EBA2B7CD34300199698 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		ED0A3EBF2B7CD3BC00199698 /* ShoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesViewController.swift; sourceTree = "<group>"; };
+		ED0A3EC12B7CD3D200199698 /* SizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeViewController.swift; sourceTree = "<group>"; };
+		ED0A3EC32B7CD42D00199698 /* UserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
 		ED2076A52B71188900B3400C /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2076A82B71188900B3400C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED2076AA2B71188900B3400C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ED2076AC2B71188900B3400C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ED2076AF2B71188900B3400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED2076AC2B71188900B3400C /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		ED2076B12B71188A00B3400C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2076B42B71188A00B3400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2076B62B71188A00B3400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +45,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED0A3EB72B7CD24300199698 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				ED2076A82B71188900B3400C /* AppDelegate.swift */,
+				ED2076AA2B71188900B3400C /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		ED0A3EBC2B7CD36300199698 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				ED2076AC2B71188900B3400C /* CatalogViewController.swift */,
+				ED0A3EBF2B7CD3BC00199698 /* ShoesViewController.swift */,
+				ED0A3EC12B7CD3D200199698 /* SizeViewController.swift */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		ED0A3EBD2B7CD36E00199698 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				ED0A3EB82B7CD2FF00199698 /* BasketViewController.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		ED0A3EBE2B7CD37D00199698 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				ED0A3EBA2B7CD34300199698 /* ProfileViewController.swift */,
+				ED0A3EC32B7CD42D00199698 /* UserDataViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		ED20769C2B71188900B3400C = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +100,10 @@
 		ED2076A72B71188900B3400C /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
-				ED2076A82B71188900B3400C /* AppDelegate.swift */,
-				ED2076AA2B71188900B3400C /* SceneDelegate.swift */,
-				ED2076AC2B71188900B3400C /* ViewController.swift */,
-				ED2076AE2B71188900B3400C /* Main.storyboard */,
+				ED0A3EBE2B7CD37D00199698 /* Profile */,
+				ED0A3EBD2B7CD36E00199698 /* Basket */,
+				ED0A3EBC2B7CD36300199698 /* Catalog */,
+				ED0A3EB72B7CD24300199698 /* Delegate */,
 				ED2076B12B71188A00B3400C /* Assets.xcassets */,
 				ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */,
 				ED2076B62B71188A00B3400C /* Info.plist */,
@@ -129,7 +173,6 @@
 			files = (
 				ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */,
 				ED2076B22B71188A00B3400C /* Assets.xcassets in Resources */,
-				ED2076B02B71188900B3400C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,23 +226,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED2076AD2B71188900B3400C /* ViewController.swift in Sources */,
+				ED2076AD2B71188900B3400C /* CatalogViewController.swift in Sources */,
+				ED0A3EC22B7CD3D200199698 /* SizeViewController.swift in Sources */,
 				ED2076A92B71188900B3400C /* AppDelegate.swift in Sources */,
+				ED0A3EBB2B7CD34300199698 /* ProfileViewController.swift in Sources */,
+				ED0A3EC02B7CD3BC00199698 /* ShoesViewController.swift in Sources */,
+				ED0A3EB92B7CD2FF00199698 /* BasketViewController.swift in Sources */,
 				ED2076AB2B71188900B3400C /* SceneDelegate.swift in Sources */,
+				ED0A3EC42B7CD42D00199698 /* UserDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ED2076AE2B71188900B3400C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED2076AF2B71188900B3400C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -336,7 +376,6 @@
 				INFOPLIST_FILE = UIKitDZ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,7 +402,6 @@
 				INFOPLIST_FILE = UIKitDZ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
