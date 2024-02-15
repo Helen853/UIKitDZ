@@ -15,8 +15,9 @@
 		ED2076A92B71188900B3400C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076A82B71188900B3400C /* AppDelegate.swift */; };
 		ED2076AB2B71188900B3400C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076AA2B71188900B3400C /* SceneDelegate.swift */; };
 		ED2076AD2B71188900B3400C /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076AC2B71188900B3400C /* CatalogViewController.swift */; };
-		ED2076B22B71188A00B3400C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B12B71188A00B3400C /* Assets.xcassets */; };
 		ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */; };
+		ED71DF652B7E5D5800B2D0C1 /* MarketplaceTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71DF642B7E5D5800B2D0C1 /* MarketplaceTabBarController.swift */; };
+		ED71DF692B7E5DF200B2D0C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED71DF682B7E5DF200B2D0C1 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +30,10 @@
 		ED2076A82B71188900B3400C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED2076AA2B71188900B3400C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ED2076AC2B71188900B3400C /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
-		ED2076B12B71188A00B3400C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2076B42B71188A00B3400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2076B62B71188A00B3400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED71DF642B7E5D5800B2D0C1 /* MarketplaceTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceTabBarController.swift; sourceTree = "<group>"; };
+		ED71DF682B7E5DF200B2D0C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,15 +102,24 @@
 		ED2076A72B71188900B3400C /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
+				ED71DF5F2B7E553F00B2D0C1 /* TabBar */,
 				ED0A3EBE2B7CD37D00199698 /* Profile */,
 				ED0A3EBD2B7CD36E00199698 /* Basket */,
 				ED0A3EBC2B7CD36300199698 /* Catalog */,
 				ED0A3EB72B7CD24300199698 /* Delegate */,
-				ED2076B12B71188A00B3400C /* Assets.xcassets */,
 				ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */,
 				ED2076B62B71188A00B3400C /* Info.plist */,
+				ED71DF682B7E5DF200B2D0C1 /* Assets.xcassets */,
 			);
 			path = UIKitDZ;
+			sourceTree = "<group>";
+		};
+		ED71DF5F2B7E553F00B2D0C1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				ED71DF642B7E5D5800B2D0C1 /* MarketplaceTabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +182,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED71DF692B7E5DF200B2D0C1 /* Assets.xcassets in Resources */,
 				ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */,
-				ED2076B22B71188A00B3400C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +240,7 @@
 				ED2076AD2B71188900B3400C /* CatalogViewController.swift in Sources */,
 				ED0A3EC22B7CD3D200199698 /* SizeViewController.swift in Sources */,
 				ED2076A92B71188900B3400C /* AppDelegate.swift in Sources */,
+				ED71DF652B7E5D5800B2D0C1 /* MarketplaceTabBarController.swift in Sources */,
 				ED0A3EBB2B7CD34300199698 /* ProfileViewController.swift in Sources */,
 				ED0A3EC02B7CD3BC00199698 /* ShoesViewController.swift in Sources */,
 				ED0A3EB92B7CD2FF00199698 /* BasketViewController.swift in Sources */,

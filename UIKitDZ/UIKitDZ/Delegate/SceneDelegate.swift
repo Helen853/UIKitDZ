@@ -13,15 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let catalogVC = СatalogViewController()
-        let bascetVC = BasketViewController()
-        let profileVC = ProfileViewController()
-
-        let window = UIWindow(windowScene: windowScene)
-        let tabBarVC = UITabBarController()
-        tabBarVC.setViewControllers([catalogVC, bascetVC, profileVC], animated: true)
-        window.rootViewController = tabBarVC
-        self.window = window
-        window.makeKeyAndVisible()
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = MarketplaceTabBarController()
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
     }
 }

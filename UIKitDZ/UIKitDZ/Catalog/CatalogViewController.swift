@@ -4,4 +4,9 @@
 import UIKit
 
 /// Класс каталога
-class СatalogViewController: UIViewController {}
+class СatalogViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Каталог"
+    }
+}

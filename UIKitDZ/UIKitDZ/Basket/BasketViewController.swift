@@ -4,4 +4,9 @@
 import UIKit
 
 // Класс корзина
-class BasketViewController: UIViewController {}
+class BasketViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Корзина"
+    }
+}
