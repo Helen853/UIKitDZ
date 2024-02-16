@@ -4,7 +4,7 @@
 import UIKit
 
 /// Экран отображающий профиль пользователя
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
     // MARK: - Constants
 
     private enum Constants {
@@ -51,7 +51,7 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVew()
+        configView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +71,7 @@ class ProfileViewController: UIViewController {
 
     // MARK: - Private Methods
 
-    private func configVew() {
+    private func configView() {
         title = Constants.titleText
         view.backgroundColor = .white
     }

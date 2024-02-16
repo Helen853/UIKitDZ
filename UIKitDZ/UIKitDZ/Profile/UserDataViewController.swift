@@ -5,9 +5,8 @@ import UIKit
 
 /// Экран отображающий данные пользователя
 final class UserDataViewController: UIViewController {
-    
     // MARK: - Constants
-    
+
     private enum Constants {
         static let titleText = "Мои данные"
         static let backText = "Стрелка"
@@ -19,27 +18,33 @@ final class UserDataViewController: UIViewController {
         static let email = "Почта"
         static let phone = "Номер телефона"
         static let save = "Сохранить"
+        static let phoneText = "phoneTextField"
+        static let emailText = "emailTextField"
+        static let nameText = "nameTextField"
+        static let phoneFormat = "+X (XXX) XXX-XXXX"
+        static let emailFormat = "gmail.com"
+        static let dateFormat = "dd.MM.yyyy"
 
         static let maxNumCount = 11
     }
 
-     // MARK: - Visual Components
-    
-    private  let backButton = UIButton()
-    private  let saveButton = UIButton()
-    
-    private  let nameTextField = UITextField()
-    private  let surnameTextField = UITextField()
-    private  let phoneTextField = UITextField()
-    private  let sizeTextField = UITextField()
-    private  let birthTextField = UITextField()
-    private  let emailTextField = UITextField()
-    
-    private  let datePicker = UIDatePicker()
-    private  let titleLabel = UILabel()
-    
+    // MARK: - Visual Components
+
+    private let backButton = UIButton()
+    private let saveButton = UIButton()
+
+    private let nameTextField = UITextField()
+    private let surnameTextField = UITextField()
+    private let phoneTextField = UITextField()
+    private let sizeTextField = UITextField()
+    private let birthTextField = UITextField()
+    private let emailTextField = UITextField()
+
+    private let datePicker = UIDatePicker()
+    private let titleLabel = UILabel()
+
     // MARK: - Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configBack()
@@ -53,7 +58,7 @@ final class UserDataViewController: UIViewController {
     }
 
     // MARK: - Private Methods
-    
+
     private func configView() {
         view.backgroundColor = .white
         view.addSubview(titleLabel)
@@ -103,9 +108,9 @@ final class UserDataViewController: UIViewController {
         configTextField(nameTextField: emailTextField, text: Constants.email, top: 383)
         emailTextField.textContentType = .emailAddress
         emailTextField.delegate = self
-        phoneTextField.accessibilityIdentifier = "phoneTextField"
-        emailTextField.accessibilityIdentifier = "emailTextField"
-        nameTextField.accessibilityIdentifier = "nameTextField"
+        phoneTextField.accessibilityIdentifier = Constants.phoneText
+        emailTextField.accessibilityIdentifier = Constants.emailText
+        nameTextField.accessibilityIdentifier = Constants.nameText
     }
 
     private func formatPhoneNumber(with mask: String, phone: String) -> String {
@@ -113,14 +118,14 @@ final class UserDataViewController: UIViewController {
         var result = ""
         var index = numbers.startIndex // numbers iterator
 
-        for ch in mask where index < numbers.endIndex {
-            if ch == "X" {
+        for char in mask where index < numbers.endIndex {
+            if char == "X" {
                 result.append(numbers[index])
 
                 index = numbers.index(after: index)
 
             } else {
-                result.append(ch)
+                result.append(char)
             }
         }
         return result
@@ -162,7 +167,7 @@ final class UserDataViewController: UIViewController {
 
     @objc private func doneAction() {
         let formater = DateFormatter()
-        formater.dateFormat = "dd.MM.yyyy"
+        formater.dateFormat = Constants.dateFormat
         birthTextField.text = formater.string(from: datePicker.date)
         view.endEditing(true)
         birthTextField.resignFirstResponder()
@@ -177,25 +182,23 @@ final class UserDataViewController: UIViewController {
     }
 }
 
-///Расширение для контроля введеного текста в полях ввода: Имя, Номер телефона, Эл. почта
+/// Расширение для контроля введеного текста в полях ввода: Имя, Номер телефона, Эл. почта
 extension UserDataViewController: UITextFieldDelegate {
-
     /// - TextField: принимаемое поля ввода
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        //проверяем наличие текста в поле ввода
+        // проверяем наличие текста в поле ввода
         guard
             let textFieldText = textField.text,
             !textFieldText.isEmpty
         else { return }
 
-        //в зависимости от идентификатора текстфилда выплняем определенную операция после введенного текста
+        // в зависимости от идентификатора текстфилда выплняем определенную операция после введенного текста
         switch textField.accessibilityIdentifier {
-        case "phoneTextField":
-            textField.text = formatPhoneNumber(with: "+X (XXX) XXX-XXXX", phone: textFieldText)
-        case "emailTextField":
-            textField.text = formatMailAdress(with: "gmail.com", adress: textFieldText)
-        case "nameTextField":
+        case Constants.phoneText:
+            textField.text = formatPhoneNumber(with: Constants.phoneFormat, phone: textFieldText)
+        case Constants.emailText:
+            textField.text = formatMailAdress(with: Constants.emailFormat, adress: textFieldText)
+        case Constants.nameText:
             configSave()
         default: break
         }
