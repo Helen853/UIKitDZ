@@ -27,19 +27,19 @@ extension ShoesViewController {
         yelowshoesBackgroundView.heightAnchor.constraint(equalToConstant: 157).isActive = true
         yelowshoesBackgroundView.widthAnchor.constraint(equalToConstant: 157).isActive = true
 
-        sportshoesBackgroundView.topAnchor.constraint(equalTo: shoesBackgroundView.bottomAnchor, constant: 10)
+        sportShoesBackgroundView.topAnchor.constraint(equalTo: shoesBackgroundView.bottomAnchor, constant: 10)
             .isActive = true
-        sportshoesBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        sportShoesBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
 
-        sportshoesBackgroundView.heightAnchor.constraint(equalToConstant: 157).isActive = true
-        sportshoesBackgroundView.widthAnchor.constraint(equalToConstant: 157).isActive = true
+        sportShoesBackgroundView.heightAnchor.constraint(equalToConstant: 157).isActive = true
+        sportShoesBackgroundView.widthAnchor.constraint(equalToConstant: 157).isActive = true
 
-        conversshoesBackgroundView.topAnchor.constraint(equalTo: sportshoesBackgroundView.bottomAnchor, constant: 10)
+        conversShoesBackgroundView.topAnchor.constraint(equalTo: sportShoesBackgroundView.bottomAnchor, constant: 10)
             .isActive = true
-        conversshoesBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        conversShoesBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
 
-        conversshoesBackgroundView.heightAnchor.constraint(equalToConstant: 157).isActive = true
-        conversshoesBackgroundView.widthAnchor.constraint(equalToConstant: 157).isActive = true
+        conversShoesBackgroundView.heightAnchor.constraint(equalToConstant: 157).isActive = true
+        conversShoesBackgroundView.widthAnchor.constraint(equalToConstant: 157).isActive = true
 
         blackHeelsImageView.leftAnchor.constraint(equalTo: shoesBackgroundView.leftAnchor, constant: 29).isActive = true
         blackHeelsImageView.topAnchor.constraint(equalTo: shoesBackgroundView.topAnchor, constant: 27).isActive = true
@@ -58,14 +58,14 @@ extension ShoesViewController {
         yellowImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         yellowImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
 
-        sportImageView.leftAnchor.constraint(equalTo: sportshoesBackgroundView.leftAnchor, constant: 29).isActive = true
-        sportImageView.topAnchor.constraint(equalTo: sportshoesBackgroundView.topAnchor, constant: 27).isActive = true
+        sportImageView.leftAnchor.constraint(equalTo: sportShoesBackgroundView.leftAnchor, constant: 29).isActive = true
+        sportImageView.topAnchor.constraint(equalTo: sportShoesBackgroundView.topAnchor, constant: 27).isActive = true
         sportImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         sportImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
 
-        conversImageView.leftAnchor.constraint(equalTo: conversshoesBackgroundView.leftAnchor, constant: 29)
+        conversImageView.leftAnchor.constraint(equalTo: conversShoesBackgroundView.leftAnchor, constant: 29)
             .isActive = true
-        conversImageView.topAnchor.constraint(equalTo: conversshoesBackgroundView.topAnchor, constant: 27)
+        conversImageView.topAnchor.constraint(equalTo: conversShoesBackgroundView.topAnchor, constant: 27)
             .isActive = true
         conversImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         conversImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
@@ -77,14 +77,14 @@ extension ShoesViewController {
         blackHeelsshoesLabel.rightAnchor.constraint(equalTo: shoesBackgroundView.rightAnchor, constant: -9)
             .isActive = true
 
-        sportshoesLabel.topAnchor.constraint(equalTo: sportshoesBackgroundView.topAnchor, constant: 130)
+        sportshoesLabel.topAnchor.constraint(equalTo: sportShoesBackgroundView.topAnchor, constant: 130)
             .isActive = true
-        sportshoesLabel.rightAnchor.constraint(equalTo: sportshoesBackgroundView.rightAnchor, constant: -9)
+        sportshoesLabel.rightAnchor.constraint(equalTo: sportShoesBackgroundView.rightAnchor, constant: -9)
             .isActive = true
 
-        conversShoesLabel.topAnchor.constraint(equalTo: conversshoesBackgroundView.topAnchor, constant: 130)
+        conversShoesLabel.topAnchor.constraint(equalTo: conversShoesBackgroundView.topAnchor, constant: 130)
             .isActive = true
-        conversShoesLabel.rightAnchor.constraint(equalTo: conversshoesBackgroundView.rightAnchor, constant: -9)
+        conversShoesLabel.rightAnchor.constraint(equalTo: conversShoesBackgroundView.rightAnchor, constant: -9)
             .isActive = true
 
         lofershoesLabel.topAnchor.constraint(equalTo: lofershoesBackgroundView.topAnchor, constant: 130)
@@ -118,16 +118,16 @@ extension ShoesViewController {
         yelowBasketButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         yelowBasketButton.widthAnchor.constraint(equalToConstant: 19).isActive = true
 
-        sportBasketButton.rightAnchor.constraint(equalTo: sportshoesBackgroundView.rightAnchor, constant: -11)
+        sportBasketButton.rightAnchor.constraint(equalTo: sportShoesBackgroundView.rightAnchor, constant: -11)
             .isActive = true
-        sportBasketButton.topAnchor.constraint(equalTo: sportshoesBackgroundView.topAnchor, constant: 11)
+        sportBasketButton.topAnchor.constraint(equalTo: sportShoesBackgroundView.topAnchor, constant: 11)
             .isActive = true
         sportBasketButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         sportBasketButton.widthAnchor.constraint(equalToConstant: 19).isActive = true
 
-        conversBasketButton.rightAnchor.constraint(equalTo: conversshoesBackgroundView.rightAnchor, constant: -11)
+        conversBasketButton.rightAnchor.constraint(equalTo: conversShoesBackgroundView.rightAnchor, constant: -11)
             .isActive = true
-        conversBasketButton.topAnchor.constraint(equalTo: conversshoesBackgroundView.topAnchor, constant: 11)
+        conversBasketButton.topAnchor.constraint(equalTo: conversShoesBackgroundView.topAnchor, constant: 11)
             .isActive = true
         conversBasketButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         conversBasketButton.widthAnchor.constraint(equalToConstant: 19).isActive = true

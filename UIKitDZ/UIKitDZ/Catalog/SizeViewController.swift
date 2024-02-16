@@ -7,20 +7,34 @@ import UIKit
 final class SizeViewController: UIViewController {
     // MARK: - Visual Components
 
+    let sizeLabel: UILabel = {
+        let element = UILabel()
+        element.text = Constants.sizeLabel
+        element.font = UIFont(name: Constants.verdana, size: 16)
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+
+    let lineView: UIView = {
+        let element = UIImageView()
+        element.backgroundColor = UIColor.gray
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+
+    let lineTwoView: UIView = {
+        let element = UIImageView()
+        element.backgroundColor = UIColor.gray
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+
     lazy var closeButton: UIButton = {
         let element = UIButton()
         element.setImage(Constants.closeImage, for: .normal)
         element.tintColor = .black
         element.translatesAutoresizingMaskIntoConstraints = false
         element.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-        return element
-    }()
-
-    let sizeLabel: UILabel = {
-        let element = UILabel()
-        element.text = Constants.sizeLabel
-        element.font = UIFont(name: Constants.verdana, size: 16)
-        element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
 
@@ -72,20 +86,6 @@ final class SizeViewController: UIViewController {
         element.titleLabel?.font = UIFont(name: Constants.verdana, size: 16)
         element.translatesAutoresizingMaskIntoConstraints = false
         element.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-        return element
-    }()
-
-    let lineView: UIView = {
-        let element = UIImageView()
-        element.backgroundColor = UIColor.gray
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
-
-    let lineTwoView: UIView = {
-        let element = UIImageView()
-        element.backgroundColor = UIColor.gray
-        element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
 

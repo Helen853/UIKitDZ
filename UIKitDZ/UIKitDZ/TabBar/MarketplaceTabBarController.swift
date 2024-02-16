@@ -19,21 +19,21 @@ class MarketplaceTabBarController: UITabBarController {
         viewControllers = [
             generateVC(
                 viewController: СatalogViewController(),
-                title: "Каталог",
-                image: UIImage(named: "catalogEmpty"),
-                selectedImage: UIImage(named: "catalogFull")
+                title: Constants.catalogTabBarName,
+                image: UIImage(named: Constants.catalogEmptyImage),
+                selectedImage: UIImage(named: Constants.catalogFullImage)
             ),
             generateVC(
                 viewController: BasketViewController(),
-                title: "Корзина",
-                image: UIImage(named: "basketEmpty"),
-                selectedImage: UIImage(named: "basketFull")
+                title: Constants.basketTitle,
+                image: UIImage(named: Constants.basketEmpty),
+                selectedImage: UIImage(named: Constants.basketFull)
             ),
             generateVC(
                 viewController: ProfileViewController(),
-                title: "Профиль",
-                image: UIImage(named: "profileEmpty"),
-                selectedImage: UIImage(named: "profileFull")
+                title: Constants.profileTitle,
+                image: UIImage(named: Constants.profileEmpty),
+                selectedImage: UIImage(named: Constants.profileFull)
             )
         ]
     }
@@ -52,7 +52,7 @@ class MarketplaceTabBarController: UITabBarController {
     }
 
     private func setTabBarAppearance() {
-        tabBar.tintColor = UIColor(named: "mainTint")
+        tabBar.tintColor = UIColor(named: Constants.mainTint)
         tabBar.unselectedItemTintColor = .darkGray
         tabBar.backgroundColor = .white
     }

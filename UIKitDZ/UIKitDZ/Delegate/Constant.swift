@@ -5,6 +5,17 @@ import UIKit
 
 /// Константы для приложения
 struct Constants {
+    static let catalogTabBarName = "Каталог"
+    static let catalogEmptyImage = "catalogEmpty"
+    static let catalogFullImage = "catalogFull"
+    static let basketTitle = "Корзина"
+    static let basketEmpty = "basketEmpty"
+    static let basketFull = "basketFull"
+    static let profileTitle = "Профиль"
+    static let profileEmpty = "profileEmpty"
+    static let profileFull = "profileFull"
+
+    static let mainTint = "mainTint"
     static let closeImage = UIImage(systemName: "xmark")
     static let sizeLabel = "Выберите размер"
     static let size35 = "35 EU"

@@ -170,7 +170,6 @@ final class СatalogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
         setupConstraints()
         setupNavigionBar()
@@ -205,6 +204,21 @@ final class СatalogViewController: UIViewController {
         segmentedControll.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
     }
 
+    private func setupNavigionBar() {
+        title = Constants.catalogButtonTitle
+        navigationItem.titleView?.tintColor = .black
+
+        let cameraImage = UIImage(named: Constants.cameraImageName)
+        let cameraBarItem = UIBarButtonItem(image: cameraImage, style: .plain, target: nil, action: nil)
+        cameraBarItem.tintColor = UIColor.black
+
+        let qrCodeImage = UIImage(named: Constants.qrCodeImageName)
+        let qrCodeBarItem = UIBarButtonItem(image: qrCodeImage, style: .plain, target: nil, action: nil)
+        qrCodeBarItem.tintColor = UIColor.black
+
+        navigationItem.rightBarButtonItems = [qrCodeBarItem, cameraBarItem]
+    }
+
     @objc private func selectedValue(target: UISegmentedControl) {
         let segmentIndex = target.selectedSegmentIndex
 
@@ -227,21 +241,6 @@ final class СatalogViewController: UIViewController {
         default:
             break
         }
-    }
-
-    private func setupNavigionBar() {
-        title = Constants.catalogButtonTitle
-        navigationItem.titleView?.tintColor = .black
-
-        let cameraImage = UIImage(named: Constants.cameraImageName)
-        let cameraBarItem = UIBarButtonItem(image: cameraImage, style: .plain, target: nil, action: nil)
-        cameraBarItem.tintColor = UIColor.black
-
-        let qrCodeImage = UIImage(named: Constants.qrCodeImageName)
-        let qrCodeBarItem = UIBarButtonItem(image: qrCodeImage, style: .plain, target: nil, action: nil)
-        qrCodeBarItem.tintColor = UIColor.black
-
-        navigationItem.rightBarButtonItems = [qrCodeBarItem, cameraBarItem]
     }
 
     @objc private func shoesButtonTapped() {
