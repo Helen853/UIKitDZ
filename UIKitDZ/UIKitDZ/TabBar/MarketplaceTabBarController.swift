@@ -4,7 +4,6 @@
 import UIKit
 
 class MarketplaceTabBarController: UITabBarController {
-    
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
