@@ -111,12 +111,12 @@ extension ShoesViewController {
         lofersBasketButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         lofersBasketButton.widthAnchor.constraint(equalToConstant: 19).isActive = true
 
-        yelowBasketButton.rightAnchor.constraint(equalTo: yelowshoesBackgroundView.rightAnchor, constant: -11)
+        yellowBasketButton.rightAnchor.constraint(equalTo: yelowshoesBackgroundView.rightAnchor, constant: -11)
             .isActive = true
-        yelowBasketButton.topAnchor.constraint(equalTo: yelowshoesBackgroundView.topAnchor, constant: 11)
+        yellowBasketButton.topAnchor.constraint(equalTo: yelowshoesBackgroundView.topAnchor, constant: 11)
             .isActive = true
-        yelowBasketButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        yelowBasketButton.widthAnchor.constraint(equalToConstant: 19).isActive = true
+        yellowBasketButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        yellowBasketButton.widthAnchor.constraint(equalToConstant: 19).isActive = true
 
         sportBasketButton.rightAnchor.constraint(equalTo: sportShoesBackgroundView.rightAnchor, constant: -11)
             .isActive = true

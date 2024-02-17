@@ -160,7 +160,7 @@ final class ShoesViewController: UIViewController {
         return element
     }()
 
-    lazy var yelowBasketButton: UIButton = {
+    lazy var yellowBasketButton: UIButton = {
         let element = UIButton(type: .system)
         if let image = UIImage(named: AppConstants.basketButton) {
             element.setBackgroundImage(image, for: .normal)
@@ -215,7 +215,7 @@ final class ShoesViewController: UIViewController {
         view.addSubview(yelowshoesBackgroundView)
         yelowshoesBackgroundView.addSubview(yellowShoesLabel)
         yelowshoesBackgroundView.addSubview(yellowImageView)
-        yelowshoesBackgroundView.addSubview(yelowBasketButton)
+        yelowshoesBackgroundView.addSubview(yellowBasketButton)
         view.addSubview(sportShoesBackgroundView)
         sportShoesBackgroundView.addSubview(sportshoesLabel)
         sportShoesBackgroundView.addSubview(sportImageView)
@@ -242,7 +242,7 @@ final class ShoesViewController: UIViewController {
                     currentArray = conversArray
                 case sportBasketButton:
                     currentArray = sportShoesArray
-                case yelowBasketButton:
+                case yellowBasketButton:
                     currentArray = yellowShoesArray
                 case basketButton:
                     currentArray = blackHeelsArray
