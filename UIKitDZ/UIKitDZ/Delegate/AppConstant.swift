@@ -26,7 +26,7 @@ struct AppConstants {
     static let verdanaBold = "Verdana-Bold"
     static let verdana = "Verdana"
     static let buttonCatalog = "buttonCatalog"
-    static let conversPrice = "5750 ₽"
+    static let conversPrice = "5750"
     static let blackHeelsPrice = "2250 ₽"
     static let lofersPrice = "4250 ₽"
     static let yellowShoesPrice = "3500 ₽"

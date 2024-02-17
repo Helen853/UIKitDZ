@@ -5,13 +5,12 @@ import UIKit
 
 /// Экран отображает какая обувь в наличии
 final class ShoesViewController: UIViewController {
-    var sentShoesHandler: (([String]) -> Void)?
-    var blackHeelsArray = [AppConstants.blackHeelsImage, AppConstants.blackHeelsPrice]
-    var lofersShoesArray = [AppConstants.lofersImage, AppConstants.lofersPrice]
-    var yellowShoesArray = [AppConstants.yellowImage, AppConstants.yellowShoesPrice]
-    var sportShoesArray = [AppConstants.sportImageView, AppConstants.sportShoesPrice]
-    var conversArray = [AppConstants.conversImage, AppConstants.conversPrice]
-    var currentArray = [String]()
+    private var blackHeelsArray = [AppConstants.blackHeelsImage, AppConstants.blackHeelsPrice]
+    private var lofersShoesArray = [AppConstants.lofersImage, AppConstants.lofersPrice]
+    private var yellowShoesArray = [AppConstants.yellowImage, AppConstants.yellowShoesPrice]
+    private var sportShoesArray = [AppConstants.sportImageView, AppConstants.sportShoesPrice]
+    private var conversArray = [AppConstants.conversImage, AppConstants.conversPrice]
+    private var currentArray = [String]()
 
     // MARK: - Visual Components
 
@@ -250,6 +249,7 @@ final class ShoesViewController: UIViewController {
                     printContent("Somthing wrong")
                 }
                 print(currentArray)
+                UserBasket.basket.usersSupply = currentArray
             }
         }
         let basket = SizeViewController()
