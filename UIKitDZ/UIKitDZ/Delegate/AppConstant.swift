@@ -1,10 +1,10 @@
-// Constant.swift
+// AppConstant.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
 /// Константы для приложения
-struct Constants {
+struct AppConstants {
     static let catalogTabBarName = "Каталог"
     static let catalogEmptyImage = "catalogEmpty"
     static let catalogFullImage = "catalogFull"

@@ -8,47 +8,47 @@ final class СatalogViewController: UIViewController {
     // MARK: - Constants
 
     let segmentedControll = UISegmentedControl(items: [
-        Constants.womenCategory,
-        Constants.menCategory,
-        Constants.childrenCategory
+        AppConstants.womenCategory,
+        AppConstants.menCategory,
+        AppConstants.childrenCategory
     ])
 
     // MARK: - Private Properties
 
     private let menArray = [
-        UIImage(named: Constants.menNewArrivals),
-        UIImage(named: Constants.menSaleItems)
+        UIImage(named: AppConstants.menNewArrivals),
+        UIImage(named: AppConstants.menSaleItems)
     ]
 
     private let womanArray = [
-        UIImage(named: Constants.womenNewArrivals),
-        UIImage(named: Constants.womenSaleItems)
+        UIImage(named: AppConstants.womenNewArrivals),
+        UIImage(named: AppConstants.womenSaleItems)
     ]
     private let childrenArray = [
-        UIImage(named: Constants.childrenNewArrivals),
-        UIImage(named: Constants.childrenSaleItems)
+        UIImage(named: AppConstants.childrenNewArrivals),
+        UIImage(named: AppConstants.childrenSaleItems)
     ]
 
     private let manItemArray = [
-        UIImage(named: Constants.menShoes),
-        UIImage(named: Constants.menBags)
+        UIImage(named: AppConstants.menShoes),
+        UIImage(named: AppConstants.menBags)
     ]
 
     private let womanItemArray = [
-        UIImage(named: Constants.womenShoes),
-        UIImage(named: Constants.womenBags)
+        UIImage(named: AppConstants.womenShoes),
+        UIImage(named: AppConstants.womenBags)
     ]
 
     private let childrenItemArray = [
-        UIImage(named: Constants.childrenShoes),
-        UIImage(named: Constants.childrenBags)
+        UIImage(named: AppConstants.childrenShoes),
+        UIImage(named: AppConstants.childrenBags)
     ]
 
     // MARK: - Visual Components
 
     lazy var brendButton: UIButton = {
         let element = UIButton(type: .system)
-        element.backgroundColor = UIColor(named: Constants.catalogColor)
+        element.backgroundColor = UIColor(named: AppConstants.catalogColor)
         element.layer.cornerRadius = 12
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -56,7 +56,7 @@ final class СatalogViewController: UIViewController {
 
     lazy var shoesButton: UIButton = {
         let element = UIButton(type: .system)
-        element.backgroundColor = UIColor(named: Constants.catalogColor)
+        element.backgroundColor = UIColor(named: AppConstants.catalogColor)
         element.layer.cornerRadius = 12
         element.translatesAutoresizingMaskIntoConstraints = false
         element.addTarget(self, action: #selector(shoesButtonTapped), for: .touchUpInside)
@@ -65,7 +65,7 @@ final class СatalogViewController: UIViewController {
 
     lazy var bagsButton: UIButton = {
         let element = UIButton(type: .system)
-        element.backgroundColor = UIColor(named: Constants.catalogColor)
+        element.backgroundColor = UIColor(named: AppConstants.catalogColor)
         element.layer.cornerRadius = 12
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -73,55 +73,55 @@ final class СatalogViewController: UIViewController {
 
     lazy var brendsLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.brandsLabelTitle
+        element.text = AppConstants.brandsLabelTitle
         element.textColor = .black
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = UIFont(name: Constants.verdanaBold, size: 14)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 14)
         return element
     }()
 
     lazy var shoesLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.shoesLabelTitle
+        element.text = AppConstants.shoesLabelTitle
         element.textColor = .black
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = UIFont(name: Constants.verdanaBold, size: 14)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 14)
         return element
     }()
 
     lazy var bagLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.bagLabelTitle
+        element.text = AppConstants.bagLabelTitle
         element.textColor = .black
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = UIFont(name: Constants.verdanaBold, size: 14)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 14)
         return element
     }()
 
     lazy var newLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.newLabelTitle
+        element.text = AppConstants.newLabelTitle
         element.textColor = .white
         element.textAlignment = .center
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = UIFont(name: Constants.verdanaBold, size: 14)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 14)
         return element
     }()
 
     lazy var saleLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.saleLabelTitle
+        element.text = AppConstants.saleLabelTitle
         element.textColor = .white
         element.textAlignment = .center
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = UIFont(name: Constants.verdanaBold, size: 14)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 14)
         return element
     }()
 
     let brandsImageView: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleAspectFit
-        element.image = UIImage(named: Constants.brandsImageName)
+        element.image = UIImage(named: AppConstants.brandsImageName)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
@@ -129,7 +129,7 @@ final class СatalogViewController: UIViewController {
     let shoesImageView: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleAspectFit
-        element.image = UIImage(named: Constants.shoesImageName)
+        element.image = UIImage(named: AppConstants.shoesImageName)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
@@ -137,7 +137,7 @@ final class СatalogViewController: UIViewController {
     let bagImageView: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleAspectFit
-        element.image = UIImage(named: Constants.bagImageName)
+        element.image = UIImage(named: AppConstants.bagImageName)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
@@ -145,7 +145,7 @@ final class СatalogViewController: UIViewController {
     lazy var newImageView: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleAspectFit
-        element.image = UIImage(named: Constants.newImageName)
+        element.image = UIImage(named: AppConstants.newImageName)
         element.layer.shadowRadius = 5
         element.layer.shadowColor = UIColor.gray.cgColor
         element.layer.shadowOpacity = 0.8
@@ -157,7 +157,7 @@ final class СatalogViewController: UIViewController {
     let saleImageView: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleAspectFit
-        element.image = UIImage(named: Constants.saleImageName)
+        element.image = UIImage(named: AppConstants.saleImageName)
         element.layer.shadowRadius = 5
         element.layer.shadowColor = UIColor.gray.cgColor
         element.layer.shadowOpacity = 0.8
@@ -200,19 +200,19 @@ final class СatalogViewController: UIViewController {
         segmentedControll.addTarget(self, action: #selector(selectedValue), for: .valueChanged)
         segmentedControll.selectedSegmentIndex = 1
         segmentedControll.layer.cornerRadius = 20
-        let font = UIFont(name: Constants.verdanaBold, size: 14) ?? UIFont.boldSystemFont(ofSize: 14)
+        let font = UIFont(name: AppConstants.verdanaBold, size: 14) ?? UIFont.boldSystemFont(ofSize: 14)
         segmentedControll.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
     }
 
     private func setupNavigionBar() {
-        title = Constants.catalogButtonTitle
+        title = AppConstants.catalogButtonTitle
         navigationItem.titleView?.tintColor = .black
 
-        let cameraImage = UIImage(named: Constants.cameraImageName)
+        let cameraImage = UIImage(named: AppConstants.cameraImageName)
         let cameraBarItem = UIBarButtonItem(image: cameraImage, style: .plain, target: nil, action: nil)
         cameraBarItem.tintColor = UIColor.black
 
-        let qrCodeImage = UIImage(named: Constants.qrCodeImageName)
+        let qrCodeImage = UIImage(named: AppConstants.qrCodeImageName)
         let qrCodeBarItem = UIBarButtonItem(image: qrCodeImage, style: .plain, target: nil, action: nil)
         qrCodeBarItem.tintColor = UIColor.black
 

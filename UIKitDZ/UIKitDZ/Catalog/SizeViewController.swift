@@ -9,8 +9,8 @@ final class SizeViewController: UIViewController {
 
     let sizeLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.sizeLabel
-        element.font = UIFont(name: Constants.verdana, size: 16)
+        element.text = AppConstants.sizeLabel
+        element.font = UIFont(name: AppConstants.verdana, size: 16)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
@@ -31,7 +31,7 @@ final class SizeViewController: UIViewController {
 
     lazy var closeButton: UIButton = {
         let element = UIButton()
-        element.setImage(Constants.closeImage, for: .normal)
+        element.setImage(AppConstants.closeImage, for: .normal)
         element.tintColor = .black
         element.translatesAutoresizingMaskIntoConstraints = false
         element.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
@@ -41,9 +41,9 @@ final class SizeViewController: UIViewController {
     lazy var size35Button: UIButton = {
         let element = UIButton(type: .system)
         element.tintColor = .black
-        element.setTitle(Constants.size35, for: .normal)
+        element.setTitle(AppConstants.size35, for: .normal)
         element.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-        element.titleLabel?.font = UIFont(name: Constants.verdana, size: 16)
+        element.titleLabel?.font = UIFont(name: AppConstants.verdana, size: 16)
         element.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -52,8 +52,8 @@ final class SizeViewController: UIViewController {
     lazy var size36Button: UIButton = {
         let element = UIButton(type: .system)
         element.tintColor = .black
-        element.setTitle(Constants.size36, for: .normal)
-        element.titleLabel?.font = UIFont(name: Constants.verdana, size: 16)
+        element.setTitle(AppConstants.size36, for: .normal)
+        element.titleLabel?.font = UIFont(name: AppConstants.verdana, size: 16)
         element.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -62,8 +62,8 @@ final class SizeViewController: UIViewController {
     lazy var size37Button: UIButton = {
         let element = UIButton(type: .system)
         element.tintColor = .black
-        element.setTitle(Constants.size37, for: .normal)
-        element.titleLabel?.font = UIFont(name: Constants.verdana, size: 16)
+        element.setTitle(AppConstants.size37, for: .normal)
+        element.titleLabel?.font = UIFont(name: AppConstants.verdana, size: 16)
         element.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -72,8 +72,8 @@ final class SizeViewController: UIViewController {
     lazy var size38Button: UIButton = {
         let element = UIButton(type: .system)
         element.tintColor = .black
-        element.setTitle(Constants.size38, for: .normal)
-        element.titleLabel?.font = UIFont(name: Constants.verdana, size: 16)
+        element.setTitle(AppConstants.size38, for: .normal)
+        element.titleLabel?.font = UIFont(name: AppConstants.verdana, size: 16)
         element.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -82,8 +82,8 @@ final class SizeViewController: UIViewController {
     lazy var size39Button: UIButton = {
         let element = UIButton(type: .system)
         element.tintColor = .black
-        element.setTitle(Constants.size39, for: .normal)
-        element.titleLabel?.font = UIFont(name: Constants.verdana, size: 16)
+        element.setTitle(AppConstants.size39, for: .normal)
+        element.titleLabel?.font = UIFont(name: AppConstants.verdana, size: 16)
         element.translatesAutoresizingMaskIntoConstraints = false
         element.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         return element

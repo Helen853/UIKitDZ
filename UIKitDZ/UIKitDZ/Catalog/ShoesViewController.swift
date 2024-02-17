@@ -5,12 +5,20 @@ import UIKit
 
 /// Экран отображает какая обувь в наличии
 final class ShoesViewController: UIViewController {
+    var sentShoesHandler: (([String]) -> Void)?
+    var blackHeelsArray = [AppConstants.blackHeelsImage, AppConstants.blackHeelsPrice]
+    var lofersShoesArray = [AppConstants.lofersImage, AppConstants.lofersPrice]
+    var yellowShoesArray = [AppConstants.yellowImage, AppConstants.yellowShoesPrice]
+    var sportShoesArray = [AppConstants.sportImageView, AppConstants.sportShoesPrice]
+    var conversArray = [AppConstants.conversImage, AppConstants.conversPrice]
+    var currentArray = [String]()
+
     // MARK: - Visual Components
 
     let blackHeelsImageView: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleAspectFit
-        element.image = UIImage(named: Constants.blackHeelsImage)
+        element.image = UIImage(named: AppConstants.blackHeelsImage)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
@@ -18,7 +26,7 @@ final class ShoesViewController: UIViewController {
     let lofersImageView: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleAspectFit
-        element.image = UIImage(named: Constants.lofersImage)
+        element.image = UIImage(named: AppConstants.lofersImage)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
@@ -26,7 +34,7 @@ final class ShoesViewController: UIViewController {
     let yellowImageView: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleAspectFit
-        element.image = UIImage(named: Constants.yellowImage)
+        element.image = UIImage(named: AppConstants.yellowImage)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
@@ -34,7 +42,7 @@ final class ShoesViewController: UIViewController {
     let sportImageView: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleAspectFit
-        element.image = UIImage(named: Constants.sportImageView)
+        element.image = UIImage(named: AppConstants.sportImageView)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
@@ -42,14 +50,14 @@ final class ShoesViewController: UIViewController {
     let conversImageView: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleAspectFit
-        element.image = UIImage(named: Constants.conversImage)
+        element.image = UIImage(named: AppConstants.conversImage)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
 
     lazy var shoesBackgroundView: UIView = {
         let element = UIView()
-        element.backgroundColor = UIColor(named: Constants.buttonCatalog)
+        element.backgroundColor = UIColor(named: AppConstants.buttonCatalog)
         element.layer.cornerRadius = 20
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -57,7 +65,7 @@ final class ShoesViewController: UIViewController {
 
     lazy var lofershoesBackgroundView: UIView = {
         let element = UIView()
-        element.backgroundColor = UIColor(named: Constants.buttonCatalog)
+        element.backgroundColor = UIColor(named: AppConstants.buttonCatalog)
         element.layer.cornerRadius = 20
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -65,7 +73,7 @@ final class ShoesViewController: UIViewController {
 
     lazy var yelowshoesBackgroundView: UIView = {
         let element = UIView()
-        element.backgroundColor = UIColor(named: Constants.buttonCatalog)
+        element.backgroundColor = UIColor(named: AppConstants.buttonCatalog)
         element.layer.cornerRadius = 20
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -73,7 +81,7 @@ final class ShoesViewController: UIViewController {
 
     lazy var sportShoesBackgroundView: UIView = {
         let element = UIView()
-        element.backgroundColor = UIColor(named: Constants.buttonCatalog)
+        element.backgroundColor = UIColor(named: AppConstants.buttonCatalog)
         element.layer.cornerRadius = 20
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -81,7 +89,7 @@ final class ShoesViewController: UIViewController {
 
     lazy var conversShoesBackgroundView: UIView = {
         let element = UIView()
-        element.backgroundColor = UIColor(named: Constants.buttonCatalog)
+        element.backgroundColor = UIColor(named: AppConstants.buttonCatalog)
         element.layer.cornerRadius = 20
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -89,52 +97,52 @@ final class ShoesViewController: UIViewController {
 
     lazy var conversShoesLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.conversPrice
+        element.text = AppConstants.conversPrice
         element.textColor = .black
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = UIFont(name: Constants.verdanaBold, size: 10)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 10)
         return element
     }()
 
     lazy var blackHeelsshoesLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.blackHeelsPrice
+        element.text = AppConstants.blackHeelsPrice
         element.textColor = .black
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = UIFont(name: Constants.verdanaBold, size: 10)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 10)
         return element
     }()
 
     lazy var lofershoesLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.lofersPrice
+        element.text = AppConstants.lofersPrice
         element.textColor = .black
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = UIFont(name: Constants.verdanaBold, size: 10)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 10)
         return element
     }()
 
     lazy var yellowShoesLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.yellowShoesPrice
+        element.text = AppConstants.yellowShoesPrice
         element.textColor = .black
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = UIFont(name: Constants.verdanaBold, size: 10)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 10)
         return element
     }()
 
     lazy var sportshoesLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.sportShoesPrice
+        element.text = AppConstants.sportShoesPrice
         element.textColor = .black
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = UIFont(name: Constants.verdanaBold, size: 10)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 10)
         return element
     }()
 
     lazy var basketButton: UIButton = {
         let element = UIButton(type: .system)
-        if let image = UIImage(named: Constants.basketButton) {
+        if let image = UIImage(named: AppConstants.basketButton) {
             element.setBackgroundImage(image, for: .normal)
         }
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -144,7 +152,7 @@ final class ShoesViewController: UIViewController {
 
     lazy var lofersBasketButton: UIButton = {
         let element = UIButton(type: .system)
-        if let image = UIImage(named: Constants.basketButton) {
+        if let image = UIImage(named: AppConstants.basketButton) {
             element.setBackgroundImage(image, for: .normal)
         }
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -154,7 +162,7 @@ final class ShoesViewController: UIViewController {
 
     lazy var yelowBasketButton: UIButton = {
         let element = UIButton(type: .system)
-        if let image = UIImage(named: Constants.basketButton) {
+        if let image = UIImage(named: AppConstants.basketButton) {
             element.setBackgroundImage(image, for: .normal)
         }
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -164,7 +172,7 @@ final class ShoesViewController: UIViewController {
 
     lazy var sportBasketButton: UIButton = {
         let element = UIButton(type: .system)
-        if let image = UIImage(named: Constants.basketButton) {
+        if let image = UIImage(named: AppConstants.basketButton) {
             element.setBackgroundImage(image, for: .normal)
         }
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -174,7 +182,7 @@ final class ShoesViewController: UIViewController {
 
     lazy var conversBasketButton: UIButton = {
         let element = UIButton(type: .system)
-        if let image = UIImage(named: Constants.basketButton) {
+        if let image = UIImage(named: AppConstants.basketButton) {
             element.setBackgroundImage(image, for: .normal)
         }
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -220,26 +228,39 @@ final class ShoesViewController: UIViewController {
 
     private func setupNavigionBar() {
         navigationController?.navigationBar.tintColor = .black
-        title = Constants.shoesTitle
+        title = AppConstants.shoesTitle
     }
 
     @objc private func basketButtonTapped(sender: UIButton) {
-        if let currentImage = sender.backgroundImage(for: .normal),
-           currentImage == UIImage(named: Constants.basketButtonFull)
-        {
-            sender.setBackgroundImage(UIImage(named: Constants.basketButton), for: .normal)
-            return
+        if let currentImage = sender.backgroundImage(for: .normal) {
+            if currentImage == UIImage(named: AppConstants.basketButtonFull) {
+                sender.setBackgroundImage(UIImage(named: AppConstants.basketButton), for: .normal)
+                return
+            } else {
+                switch sender {
+                case conversBasketButton:
+                    currentArray = conversArray
+                case sportBasketButton:
+                    currentArray = sportShoesArray
+                case yelowBasketButton:
+                    currentArray = yellowShoesArray
+                case basketButton:
+                    currentArray = blackHeelsArray
+                default:
+                    printContent("Somthing wrong")
+                }
+                print(currentArray)
+            }
         }
-
         let basket = SizeViewController()
         basket.modalPresentationStyle = .formSheet
         present(basket, animated: true, completion: nil)
 
         if let currentImage = sender.backgroundImage(for: .normal) {
-            if currentImage == UIImage(named: Constants.basketButton) {
-                sender.setBackgroundImage(UIImage(named: Constants.basketButtonFull), for: .normal)
+            if currentImage == UIImage(named: AppConstants.basketButton) {
+                sender.setBackgroundImage(UIImage(named: AppConstants.basketButtonFull), for: .normal)
             } else {
-                sender.setBackgroundImage(UIImage(named: Constants.basketButton), for: .normal)
+                sender.setBackgroundImage(UIImage(named: AppConstants.basketButton), for: .normal)
             }
         }
     }
