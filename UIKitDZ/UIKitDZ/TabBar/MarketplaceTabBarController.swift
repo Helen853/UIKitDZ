@@ -4,7 +4,6 @@
 import UIKit
 
 class MarketplaceTabBarController: UITabBarController {
-    
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -20,21 +19,21 @@ class MarketplaceTabBarController: UITabBarController {
         viewControllers = [
             generateVC(
                 viewController: СatalogViewController(),
-                title: "Каталог",
-                image: UIImage(named: "catalogEmpty"),
-                selectedImage: UIImage(named: "catalogFull")
+                title: AppConstants.catalogTabBarName,
+                image: UIImage(named: AppConstants.catalogEmptyImage),
+                selectedImage: UIImage(named: AppConstants.catalogFullImage)
             ),
             generateVC(
                 viewController: BasketViewController(),
-                title: "Корзина",
-                image: UIImage(named: "basketEmpty"),
-                selectedImage: UIImage(named: "basketFull")
+                title: AppConstants.basketTitle,
+                image: UIImage(named: AppConstants.basketEmpty),
+                selectedImage: UIImage(named: AppConstants.basketFull)
             ),
             generateVC(
                 viewController: ProfileViewController(),
-                title: "Профиль",
-                image: UIImage(named: "profileEmpty"),
-                selectedImage: UIImage(named: "profileFull")
+                title: AppConstants.profileTitle,
+                image: UIImage(named: AppConstants.profileEmpty),
+                selectedImage: UIImage(named: AppConstants.profileFull)
             )
         ]
     }
@@ -53,7 +52,7 @@ class MarketplaceTabBarController: UITabBarController {
     }
 
     private func setTabBarAppearance() {
-        tabBar.tintColor = UIColor(named: "mainTint")
+        tabBar.tintColor = UIColor(named: AppConstants.mainTint)
         tabBar.unselectedItemTintColor = .darkGray
         tabBar.backgroundColor = .white
     }
