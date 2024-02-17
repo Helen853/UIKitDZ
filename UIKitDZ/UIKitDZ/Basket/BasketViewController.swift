@@ -61,7 +61,7 @@ final class BasketViewController: UIViewController {
 
     private var countShoes = 1
     private var priceShoes = Int()
-    private var sum = 0
+    private var sum = Int()
     private var nameChoes = ""
 
     // MARK: - Life Cycle
@@ -90,6 +90,7 @@ final class BasketViewController: UIViewController {
         guard !UserBasket.basket.usersSupply.isEmpty else { return }
         priceShoes = Int(UserBasket.basket.usersSupply[1]) ?? 0
         nameChoes = UserBasket.basket.usersSupply[0]
+        sum = priceShoes
     }
 
     private func configView() {
@@ -168,7 +169,7 @@ final class BasketViewController: UIViewController {
 
     private func configCheckout() {
         view.addSubview(checkoutButton)
-        checkoutButton.setTitle(Constants.checkoutText, for: .normal)
+        checkoutButton.setTitle("\(Constants.checkoutText) \(sum) \(Constants.ruble)", for: .normal)
         checkoutButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         checkoutButton.backgroundColor = #colorLiteral(red: 0.9155070186, green: 0.2173944712, blue: 0.5847681761, alpha: 1)
         checkoutButton.layer.cornerRadius = 12
@@ -328,8 +329,8 @@ final class BasketViewController: UIViewController {
 
     @objc func decreaseCount() {
         countShoes -= 1
-        let lessCost = sum - priceShoes
-        let checkoutButtonText = "\(Constants.checkoutText)\(String(lessCost))\(Constants.ruble)"
+        sum -= priceShoes
+        let checkoutButtonText = "\(Constants.checkoutText)\(String(sum))\(Constants.ruble)"
         configCountLabel()
         checkoutButton.setTitle(checkoutButtonText, for: .normal)
     }
