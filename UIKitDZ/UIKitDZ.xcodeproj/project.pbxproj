@@ -20,6 +20,7 @@
 		ED2076AB2B71188900B3400C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076AA2B71188900B3400C /* SceneDelegate.swift */; };
 		ED2076AD2B71188900B3400C /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076AC2B71188900B3400C /* CatalogViewController.swift */; };
 		ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */; };
+		ED6E200D2B80D06200689715 /* UserBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E200C2B80D06200689715 /* UserBasket.swift */; };
 		ED71DF652B7E5D5800B2D0C1 /* MarketplaceTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71DF642B7E5D5800B2D0C1 /* MarketplaceTabBarController.swift */; };
 		ED71DF692B7E5DF200B2D0C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED71DF682B7E5DF200B2D0C1 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		ED2076AC2B71188900B3400C /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		ED2076B42B71188A00B3400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2076B62B71188A00B3400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED6E200C2B80D06200689715 /* UserBasket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBasket.swift; sourceTree = "<group>"; };
 		ED71DF642B7E5D5800B2D0C1 /* MarketplaceTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceTabBarController.swift; sourceTree = "<group>"; };
 		ED71DF682B7E5DF200B2D0C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 		ED0A3EBD2B7CD36E00199698 /* Basket */ = {
 			isa = PBXGroup;
 			children = (
+				ED6E200C2B80D06200689715 /* UserBasket.swift */,
 				ED0A3EB82B7CD2FF00199698 /* BasketViewController.swift */,
 			);
 			path = Basket;
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED6E200D2B80D06200689715 /* UserBasket.swift in Sources */,
 				ED2076AD2B71188900B3400C /* CatalogViewController.swift in Sources */,
 				ED0A3EC22B7CD3D200199698 /* SizeViewController.swift in Sources */,
 				ED2076A92B71188900B3400C /* AppDelegate.swift in Sources */,
