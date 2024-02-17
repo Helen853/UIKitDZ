@@ -9,7 +9,6 @@ final class BasketViewController: UIViewController {
 
     private enum Constants {
         static let titleText = "Корзина"
-        static let nameChoes = "Ботинок"
         static let genderText = "Женские ботинки"
         static let basket = "Корзина на товаре"
         static let count = "Количество"
@@ -17,18 +16,18 @@ final class BasketViewController: UIViewController {
         static let price = "Цена"
         static let plus = "+"
         static let minus = "-"
-        static var countShoes = 1
+
         static let sizeThirtyFiveLabel = "35"
         static let sizeThirtySixLabel = "36"
         static let sizeThirtySevenLabel = "37"
         static let sizeThirtyЕightLabel = "38"
         static let sizeThirtyNineLabel = "39"
-        static var checkoutText = "Оформить заказ - \(sum) ₽"
-        static let priceShoes = 4250
-        static var sum = String(priceShoes)
+
         static let basketEmpty = "Ваша корзина пуста"
         static let transition = "Перейдие в каталог и добавьте товары в корзину"
         static let bag = "bag"
+        static let checkoutText = "Оформить заказ -"
+        static let ruble = "₽"
     }
 
     // MARK: - Visual Components
@@ -60,11 +59,20 @@ final class BasketViewController: UIViewController {
     private let grayView = UIView()
     private let bagEmtyImageView = UIImageView()
 
+    private var countShoes = 1
+    private var priceShoes = Int()
+    private var sum = 0
+    private var nameChoes = ""
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupInfoShoes()
         configView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
         configGroundShoes()
         configImage()
         setupLabel()
@@ -77,6 +85,12 @@ final class BasketViewController: UIViewController {
     }
 
     // MARK: - Private Methods
+
+    func setupInfoShoes() {
+        guard !UserBasket.basket.usersSupply.isEmpty else { return }
+        priceShoes = Int(UserBasket.basket.usersSupply[1]) ?? 0
+        nameChoes = UserBasket.basket.usersSupply[0]
+    }
 
     private func configView() {
         title = Constants.titleText
@@ -95,7 +109,7 @@ final class BasketViewController: UIViewController {
 
     private func configImage() {
         shoesView.addSubview(shoesImageView)
-        shoesImageView.image = UIImage(named: Constants.nameChoes)
+        shoesImageView.image = UIImage(named: nameChoes)
         shoesImageView.translatesAutoresizingMaskIntoConstraints = false
         shoesImageView.leftAnchor.constraint(equalTo: shoesView.leftAnchor, constant: 28).isActive = true
         shoesImageView.topAnchor.constraint(equalTo: shoesView.topAnchor, constant: 29).isActive = true
@@ -237,7 +251,7 @@ final class BasketViewController: UIViewController {
 
     private func configCountLabel() {
         view.addSubview(countSelectLabel)
-        countSelectLabel.text = String(Constants.countShoes)
+        countSelectLabel.text = String(countShoes)
         countSelectLabel.translatesAutoresizingMaskIntoConstraints = false
         countSelectLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 313).isActive = true
         countSelectLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 162).isActive = true
@@ -248,7 +262,7 @@ final class BasketViewController: UIViewController {
 
     func configPriceShoesLabel() {
         view.addSubview(priceShoesLabel)
-        priceShoesLabel.text = String(Constants.priceShoes) + " P"
+        priceShoesLabel.text = String(priceShoes) + " \(Constants.ruble)"
         priceShoesLabel.translatesAutoresizingMaskIntoConstraints = false
         priceShoesLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 296).isActive = true
         priceShoesLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 250).isActive = true
@@ -305,18 +319,18 @@ final class BasketViewController: UIViewController {
     }
 
     @objc private func increaseCount() {
-        Constants.countShoes += 1
-        Constants.sum = String(Constants.priceShoes * Constants.countShoes)
-        Constants.checkoutText = "Оформить заказ - \(Constants.sum) ₽"
+        countShoes += 1
+        sum = priceShoes * countShoes
+        let checkoutButtonText = "\(Constants.checkoutText)\(String(sum))\(Constants.ruble)"
         configCountLabel()
-        checkoutButton.setTitle(Constants.checkoutText, for: .normal)
+        checkoutButton.setTitle(checkoutButtonText, for: .normal)
     }
 
     @objc func decreaseCount() {
-        Constants.countShoes -= 1
-        Constants.sum = String((Int(Constants.sum) ?? 0) - Constants.priceShoes)
-        Constants.checkoutText = "Оформить заказ - \(Constants.sum) ₽"
+        countShoes -= 1
+        let lessCost = sum - priceShoes
+        let checkoutButtonText = "\(Constants.checkoutText)\(String(lessCost))\(Constants.ruble)"
         configCountLabel()
-        checkoutButton.setTitle(Constants.checkoutText, for: .normal)
+        checkoutButton.setTitle(checkoutButtonText, for: .normal)
     }
 }
