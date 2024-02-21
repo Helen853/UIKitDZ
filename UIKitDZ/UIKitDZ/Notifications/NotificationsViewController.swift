@@ -5,6 +5,12 @@ import UIKit
 
 /// Экран уведомлений
 final class NotificationsViewController: UIViewController {
+    
+    enum Sections {
+        case today
+        case otherDay
+    }
+    
     // MARK: - Visual Components
 
     private let titleLabel = UILabel()
@@ -12,6 +18,8 @@ final class NotificationsViewController: UIViewController {
     private let tableView = UITableView()
     private let todayHeaderLabel = UILabel()
     private let weekHeaderLabel = UILabel()
+    private let today = Sections.today
+    private let otherDay = Sections.otherDay
 
     // Массив с моделями ячеек
     private var notifications: [NotificationProtocol] = [
@@ -72,6 +80,8 @@ final class NotificationsViewController: UIViewController {
             buttonRight: AppConstants.subscribeText
         )
     ]
+    
+    private lazy var sections: [Sections] = [today, otherDay]
 
     // MARK: - Life Cycle
 
@@ -143,14 +153,14 @@ final class NotificationsViewController: UIViewController {
 
 extension NotificationsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        sections.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let todayNotification = notifications.filter {
             guard
-                let actiontime = $0.notificationTime,
-                actiontime == " 12 ч"
+                let actionTime = $0.notificationTime,
+                actionTime == " 12 ч"
             else { return false }
 
             return true
@@ -158,20 +168,18 @@ extension NotificationsViewController: UITableViewDataSource {
 
         let anohterNotification = notifications.filter {
             guard
-                let actiontime = $0.notificationTime,
-                actiontime != " 12 ч"
+                let actionTime = $0.notificationTime,
+                actionTime != " 12 ч"
             else { return false }
 
             return true
         }
-
-        switch section {
-        case 0:
+        
+        switch sections[section] {
+        case .today:
             return todayNotification.count
-        case 1:
+        case .otherDay:
             return anohterNotification.count
-        default:
-            return 0
         }
     }
 
