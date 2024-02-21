@@ -9,23 +9,19 @@ final class PostTableViewCell: UITableViewCell {
 
     private let avatarImageView = UIImageView()
     private let nameUserLabel = UILabel()
-
     private let postImageView = UIImageView()
     private let secondPageImageView = UIImageView()
     private let thirdPageImageView = UIImageView()
-
     private let ellipsesLabel = UILabel()
     private let likeLabel = UILabel()
     private let dicriptionLabel = UILabel()
     private let commentedLabel = UILabel()
     private let publicationTimeLabel = UILabel()
-
     private let avatarUserImageView = UIImageView()
     private let likeImageView = UIImageView()
     private let commentImageView = UIImageView()
     private let sendImageView = UIImageView()
     private let saveImageView = UIImageView()
-
     private let pageControll = UIPageControl()
     private let scrollView = UIScrollView()
 
@@ -54,23 +50,30 @@ final class PostTableViewCell: UITableViewCell {
     // MARK: - Public Methods
 
     func configureCell(model: Post) {
-        avatarImageView.image = UIImage(named: model.avatarImage)
-        nameUserLabel.text = model.nameUser
-        postImageView.image = UIImage(named: model.postImage)
-        likeImageView.image = UIImage(named: model.likeImage)
-        commentImageView.image = UIImage(named: model.commentImage)
-        sendImageView.image = UIImage(named: model.sendImage)
-        saveImageView.image = UIImage(named: model.saveImage)
-        likeLabel.text = model.likeTitle
+        configNameImage(model: model)
+        configTextLabel(model: model)
+    }
+
+    func configNameImage(model: Post) {
+        avatarImageView.image = UIImage(named: model.avatarName)
+        postImageView.image = UIImage(named: model.imageForPostName)
+        likeImageView.image = UIImage(named: model.likeImageName)
+        commentImageView.image = UIImage(named: model.commentImageName)
+        sendImageView.image = UIImage(named: model.sendImageName)
+        saveImageView.image = UIImage(named: model.saveImageName)
+        avatarUserImageView.image = UIImage(named: model.userAvatarName)
+        guard model.imagePages.count > 1 else { return }
+        secondPageImageView.image = UIImage(named: model.imagePages[1])
+        thirdPageImageView.image = UIImage(named: model.imagePages[2])
+        configPage()
+    }
+
+    func configTextLabel(model: Post) {
+        nameUserLabel.text = model.userName
+        likeLabel.text = model.likeCount
         dicriptionLabel.text = model.discriptionPost
-        avatarUserImageView.image = UIImage(named: model.avatarUser)
         commentedLabel.text = model.commented
         publicationTimeLabel.text = model.publicationTime
-
-        guard model.pages.count > 1 else { return }
-        secondPageImageView.image = UIImage(named: model.pages[1])
-        thirdPageImageView.image = UIImage(named: model.pages[2])
-        configPage()
     }
 
     // MARK: - Private Methods

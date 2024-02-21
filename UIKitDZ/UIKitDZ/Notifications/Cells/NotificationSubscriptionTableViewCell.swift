@@ -28,22 +28,34 @@ final class NotificationSubscriptionTableViewCell: UITableViewCell {
     // MARK: - Public Methods
 
     func configureCell(model: NotificationSubscription) {
+        configureNameImage(model: model)
+        configureTextLabel(model: model)
+        configureTitleButton(model: model)
+    }
+
+    // MARK: - Private Methods
+
+    private func configureNameImage(model: NotificationSubscription) {
         avatarImageView.image = UIImage(named: model.avatarName)
+    }
+    
+    private func configureTextLabel(model: NotificationSubscription) {
         let timeAction = NSAttributedString(
             string: model.notificationTime ?? "",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
         let boldAttributed = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)]
-        let comment = NSMutableAttributedString(string: model.actionUser)
-        let allText = NSMutableAttributedString(string: model.nameUser, attributes: boldAttributed)
+        let comment = NSMutableAttributedString(string: model.userAction)
+        let allText = NSMutableAttributedString(string: model.userName, attributes: boldAttributed)
         allText.append(comment)
         allText.append(timeAction)
         commentLabel.attributedText = allText
+    }
+    
+    private func configureTitleButton(model: NotificationSubscription) {
         subscriptionButton.setTitle(model.buttonRight, for: .normal)
     }
-
-    // MARK: - Private Methods
-
+    
     private func configureAvatar() {
         contentView.addSubview(avatarImageView)
         avatarImageView.clipsToBounds = true

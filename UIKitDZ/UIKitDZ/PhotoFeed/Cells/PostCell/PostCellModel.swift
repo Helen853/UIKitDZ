@@ -3,21 +3,34 @@
 
 import Foundation
 
-/// Модель для ячейки с постом
+/// Пост
 struct Post: CellTypeProtocol {
+    ///Тип ячейки
     var cellType: TableCellsTypes = .post
-
-    var avatarImage: String
-    var nameUser: String
-    var postImage: String
+    ///Аватарка пользователя сделавшего публикацию
+    var avatarName: String
+    ///Имя пользователя
+    var userName: String
+    ///Картинка для поста
+    var imageForPostName: String
+    ///Описание под постом
     var discriptionPost: String
-    var likeImage: String
-    var commentImage: String
-    var sendImage: String
-    var saveImage: String
-    var likeTitle: String
-    var avatarUser: String
+    ///Картинка для лайка
+    var likeImageName: String
+    ///Картинка для комментария
+    var commentImageName: String
+    ///Картинка отправки поста
+    var sendImageName: String
+    ///Картинка для сохранения поста
+    var saveImageName: String
+    ///Текст с колличеством лайков
+    var likeCount: String
+    ///Аватарка пользователя
+    var userAvatarName: String
+    ///Комментировать
     var commented: String
+    ///Время публикации
     var publicationTime: String
-    var pages = [String]()
+    ///Массив картинок
+    var imagePages = [String]()
 }

@@ -3,13 +3,12 @@
 
 import UIKit
 
-/// Настройка панели табБара
+/// Майн таб бар
 final class LinkTabBarController: UITabBarController {
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.itemPositioning = .centered
         generateTabBar()
         setTabBarAppearance()
     }
@@ -46,6 +45,7 @@ final class LinkTabBarController: UITabBarController {
     }
 
     private func setTabBarAppearance() {
+        tabBar.itemPositioning = .centered
         tabBar.tintColor = #colorLiteral(red: 0, green: 0.5694641471, blue: 1, alpha: 1)
         tabBar.unselectedItemTintColor = .darkGray
         tabBar.backgroundColor = .white

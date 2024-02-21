@@ -8,7 +8,6 @@ final class StoriesTableViewCell: UITableViewCell {
     // MARK: - Visual Components
 
     private let nameLabel = UILabel()
-
     private let avatarImageView = UIImageView()
     private let avatarStoriesImageView = UIImageView()
     private let avatar2StoriesImageView = UIImageView()
@@ -18,9 +17,7 @@ final class StoriesTableViewCell: UITableViewCell {
     private let secondNameUserLabel = UILabel()
     private let thirdNameUserLabel = UILabel()
     private let fourthNameUserLabel = UILabel()
-
     private let plusLabel = UILabel()
-
     private let scrollView = UIScrollView()
 
     // MARK: - Initializers
@@ -44,22 +41,29 @@ final class StoriesTableViewCell: UITableViewCell {
     // MARK: - Public Methods
 
     func configureCell(model: Stories) {
-        nameLabel.text = model.nameLabel
-        avatarImageView.image = UIImage(named: model.nameImage)
+        configureNameImage(model: model)
+        configureTextLabel(model: model)
+    }
+
+    // MARK: - Private Methods
+    
+    private func configureNameImage(model: Stories) {
+        avatarImageView.image = UIImage(named: model.imageName)
         let storiesArray = [
             avatarStoriesImageView,
             avatar2StoriesImageView,
             avatar3StoriesImageView,
             avatar4StoriesImageView
         ]
-        storiesArray.forEach { $0.image = UIImage(named: model.avatarLavanda) }
-
-        let names = [nameUserLabel, secondNameUserLabel, thirdNameUserLabel, fourthNameUserLabel]
-        names.forEach { $0.text = model.nameUser }
+        storiesArray.forEach { $0.image = UIImage(named: model.avatarStoriesName) }
     }
-
-    // MARK: - Private Methods
-
+    
+    private func configureTextLabel(model: Stories) {
+        nameLabel.text = model.labelName
+        let names = [nameUserLabel, secondNameUserLabel, thirdNameUserLabel, fourthNameUserLabel]
+        names.forEach { $0.text = model.userName }
+    }
+    
     private func configureNameUser() {
         scrollView.addSubview(nameUserLabel)
         nameUserLabel.font = UIFont.systemFont(ofSize: 8)

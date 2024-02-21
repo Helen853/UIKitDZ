@@ -1,13 +1,9 @@
-//
-//  NotificationSubscription.swift
-//  UIKitDZ
-//
-//  Created by Киса Мурлыса on 21.02.2024.
-//
+// NotificationSubscription.swift
+// Copyright © RoadMap. All rights reserved.
 
 import Foundation
 
-// Модель для ячейки с кнопкой "Подписаться"
+// Ячейка с кнопкой "Подписаться"
 struct NotificationSubscription: NotificationProtocol {
     // Тип ячейки
     var cellType: NotificationTypes = .subscription
@@ -15,9 +11,9 @@ struct NotificationSubscription: NotificationProtocol {
     // Фото пользователя
     var avatarName: String
     // Никнейм пользователя
-    var nameUser: String
+    var userName: String
     // Описание действия пользователя
-    var actionUser: String
+    var userAction: String
     // Время выполнения действия пользователя
     var notificationTime: String?
     // Кнопка справа с действием "Подписаться"

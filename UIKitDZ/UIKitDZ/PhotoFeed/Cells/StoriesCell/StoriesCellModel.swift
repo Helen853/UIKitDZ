@@ -3,12 +3,16 @@
 
 import Foundation
 
-/// Модель для ячейки с историями
+/// Сторис
 struct Stories: CellTypeProtocol {
+    ///Тип ячейки
     let cellType: TableCellsTypes = .stories
-
-    let nameImage: String
-    let nameLabel: String
-    let avatarLavanda: String
-    let nameUser: String
+    ///Аватар пользователя
+    let imageName: String
+    ///Текст под историей
+    let labelName: String
+    /// Аватарка сториз пользователя
+    let avatarStoriesName: String
+    ///Имя пользователя
+    let userName: String
 }

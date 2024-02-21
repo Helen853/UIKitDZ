@@ -13,10 +13,12 @@
 		ED2076B22B71188A00B3400C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B12B71188A00B3400C /* Assets.xcassets */; };
 		ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */; };
 		ED3EC5162B85350C00A35708 /* NotificationCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC5152B85350C00A35708 /* NotificationCommentTableViewCell.swift */; };
-		ED3EC5182B85352E00A35708 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC5172B85352E00A35708 /* NotificationType.swift */; };
+		ED3EC5182B85352E00A35708 /* NotificationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC5172B85352E00A35708 /* NotificationProtocol.swift */; };
 		ED3EC51A2B8550DF00A35708 /* NotificationSubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC5192B8550DF00A35708 /* NotificationSubscriptionTableViewCell.swift */; };
 		ED3EC51C2B86142D00A35708 /* NotificationComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC51B2B86142D00A35708 /* NotificationComment.swift */; };
 		ED3EC51E2B86146400A35708 /* NotificationSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC51D2B86146400A35708 /* NotificationSubscription.swift */; };
+		ED3EC5202B8624A300A35708 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC51F2B8624A300A35708 /* NotificationType.swift */; };
+		ED3EC5222B8626EF00A35708 /* CellsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC5212B8626EF00A35708 /* CellsType.swift */; };
 		EDEAFA4D2B83AB0800533100 /* PhotoFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA4C2B83AB0800533100 /* PhotoFeedViewController.swift */; };
 		EDEAFA4F2B83AB3000533100 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA4E2B83AB3000533100 /* NotificationsViewController.swift */; };
 		EDEAFA512B83AB4200533100 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA502B83AB4200533100 /* ProfileViewController.swift */; };
@@ -24,7 +26,7 @@
 		EDEAFA562B83C40F00533100 /* StoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA552B83C40F00533100 /* StoriesTableViewCell.swift */; };
 		EDEAFA582B83C4D200533100 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA572B83C4D200533100 /* PostTableViewCell.swift */; };
 		EDEAFA5A2B83C53D00533100 /* RecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA592B83C53C00533100 /* RecommendTableViewCell.swift */; };
-		EDEAFA5C2B83CD2500533100 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA5B2B83CD2500533100 /* CellType.swift */; };
+		EDEAFA5C2B83CD2500533100 /* CellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA5B2B83CD2500533100 /* CellProtocol.swift */; };
 		EDEAFA5F2B83CDF400533100 /* StoriesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA5E2B83CDF400533100 /* StoriesCellModel.swift */; };
 		EDEAFA622B83CE6F00533100 /* PostCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA612B83CE6F00533100 /* PostCellModel.swift */; };
 		EDEAFA652B83D83100533100 /* RecomendationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA642B83D83100533100 /* RecomendationCellModel.swift */; };
@@ -39,10 +41,12 @@
 		ED2076B42B71188A00B3400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2076B62B71188A00B3400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED3EC5152B85350C00A35708 /* NotificationCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCommentTableViewCell.swift; sourceTree = "<group>"; };
-		ED3EC5172B85352E00A35708 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
+		ED3EC5172B85352E00A35708 /* NotificationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationProtocol.swift; sourceTree = "<group>"; };
 		ED3EC5192B8550DF00A35708 /* NotificationSubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSubscriptionTableViewCell.swift; sourceTree = "<group>"; };
 		ED3EC51B2B86142D00A35708 /* NotificationComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComment.swift; sourceTree = "<group>"; };
 		ED3EC51D2B86146400A35708 /* NotificationSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSubscription.swift; sourceTree = "<group>"; };
+		ED3EC51F2B8624A300A35708 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
+		ED3EC5212B8626EF00A35708 /* CellsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsType.swift; sourceTree = "<group>"; };
 		EDEAFA4C2B83AB0800533100 /* PhotoFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedViewController.swift; sourceTree = "<group>"; };
 		EDEAFA4E2B83AB3000533100 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		EDEAFA502B83AB4200533100 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +54,7 @@
 		EDEAFA552B83C40F00533100 /* StoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTableViewCell.swift; sourceTree = "<group>"; };
 		EDEAFA572B83C4D200533100 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		EDEAFA592B83C53C00533100 /* RecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTableViewCell.swift; sourceTree = "<group>"; };
-		EDEAFA5B2B83CD2500533100 /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
+		EDEAFA5B2B83CD2500533100 /* CellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProtocol.swift; sourceTree = "<group>"; };
 		EDEAFA5E2B83CDF400533100 /* StoriesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCellModel.swift; sourceTree = "<group>"; };
 		EDEAFA612B83CE6F00533100 /* PostCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellModel.swift; sourceTree = "<group>"; };
 		EDEAFA642B83D83100533100 /* RecomendationCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationCellModel.swift; sourceTree = "<group>"; };
@@ -103,9 +107,10 @@
 			children = (
 				ED3EC5152B85350C00A35708 /* NotificationCommentTableViewCell.swift */,
 				ED3EC5192B8550DF00A35708 /* NotificationSubscriptionTableViewCell.swift */,
-				ED3EC5172B85352E00A35708 /* NotificationType.swift */,
+				ED3EC5172B85352E00A35708 /* NotificationProtocol.swift */,
 				ED3EC51D2B86146400A35708 /* NotificationSubscription.swift */,
 				ED3EC51B2B86142D00A35708 /* NotificationComment.swift */,
+				ED3EC51F2B8624A300A35708 /* NotificationType.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -160,7 +165,8 @@
 				EDEAFA602B83CE5100533100 /* PostCell */,
 				EDEAFA5D2B83CDE700533100 /* StoriesCell */,
 				EDEAFA632B83D79300533100 /* RecomendationCell */,
-				EDEAFA5B2B83CD2500533100 /* CellType.swift */,
+				EDEAFA5B2B83CD2500533100 /* CellProtocol.swift */,
+				ED3EC5212B8626EF00A35708 /* CellsType.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -313,14 +319,16 @@
 				EDEAFA512B83AB4200533100 /* ProfileViewController.swift in Sources */,
 				ED3EC51C2B86142D00A35708 /* NotificationComment.swift in Sources */,
 				EDEAFA562B83C40F00533100 /* StoriesTableViewCell.swift in Sources */,
-				ED3EC5182B85352E00A35708 /* NotificationType.swift in Sources */,
+				ED3EC5182B85352E00A35708 /* NotificationProtocol.swift in Sources */,
+				ED3EC5222B8626EF00A35708 /* CellsType.swift in Sources */,
 				EDEAFA4F2B83AB3000533100 /* NotificationsViewController.swift in Sources */,
 				ED3EC51E2B86146400A35708 /* NotificationSubscription.swift in Sources */,
 				ED2076AD2B71188900B3400C /* LinkTabBarController.swift in Sources */,
 				ED3EC5162B85350C00A35708 /* NotificationCommentTableViewCell.swift in Sources */,
-				EDEAFA5C2B83CD2500533100 /* CellType.swift in Sources */,
+				EDEAFA5C2B83CD2500533100 /* CellProtocol.swift in Sources */,
 				EDEAFA622B83CE6F00533100 /* PostCellModel.swift in Sources */,
 				EDEAFA4D2B83AB0800533100 /* PhotoFeedViewController.swift in Sources */,
+				ED3EC5202B8624A300A35708 /* NotificationType.swift in Sources */,
 				EDEAFA5F2B83CDF400533100 /* StoriesCellModel.swift in Sources */,
 				EDEAFA532B83B13A00533100 /* AppConstants.swift in Sources */,
 				ED2076A92B71188900B3400C /* AppDelegate.swift in Sources */,

@@ -3,8 +3,8 @@
 
 import UIKit
 
-/// Экран отображающий профиль пользователя
-class ProfileViewController: UIViewController {
+/// Экран профиля пользователя
+final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -1,16 +1,12 @@
-// NotificationModel.swift
+// NotificationType.swift
 // Copyright © RoadMap. All rights reserved.
 
 import Foundation
 
-/// Протокол предоставляет информацию о типе модели и времени уведомления
-protocol NotificationProtocol {
-    var cellType: NotificationTypes { get }
-    var notificationTime: String? { get }
-}
-
-// Енам для типов ячеек
+/// Перечисление с типом ячеек для таблицы
 enum NotificationTypes {
+    ///Кейс для ячейки с комментарием
     case comment
+    ///Кейс для ячейки с кнопкой подписаться
     case subscription
 }

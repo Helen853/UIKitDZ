@@ -3,90 +3,89 @@
 
 import UIKit
 
-/// Экран отображающий ленту с фото
+/// Экран  ленты с фото
 final class PhotoFeedViewController: UIViewController {
     // MARK: - Visual Components
 
     private let leftItemImageView = UIImageView()
     private let rightItemImageView = UIImageView()
-
     private let tableView = UITableView()
 
     // Массив моделей ячеек
     private let cellModels: [CellTypeProtocol] = [
         Stories(
-            nameImage: AppConstants.nameAvatar,
-            nameLabel: AppConstants.nameStories,
-            avatarLavanda: AppConstants.avatarLavanda, nameUser: AppConstants.lavandaUser
+            imageName: AppConstants.nameAvatar,
+            labelName: AppConstants.nameStories,
+            avatarStoriesName: AppConstants.avatarLavanda, userName: AppConstants.lavandaUser
         ),
         Post(
-            avatarImage: AppConstants.avatarHourse,
-            nameUser: AppConstants.nameUser,
-            postImage: AppConstants.postImage,
+            avatarName: AppConstants.avatarHourse,
+            userName: AppConstants.nameUser,
+            imageForPostName: AppConstants.postImage,
             discriptionPost: AppConstants.discription,
-            likeImage: AppConstants.likeImage,
-            commentImage: AppConstants.commentImage,
-            sendImage: AppConstants.sendImage,
-            saveImage: AppConstants.saveImage,
-            likeTitle: AppConstants.countLike,
-            avatarUser: AppConstants.nameAvatar,
+            likeImageName: AppConstants.likeImage,
+            commentImageName: AppConstants.commentImage,
+            sendImageName: AppConstants.sendImage,
+            saveImageName: AppConstants.saveImage,
+            likeCount: AppConstants.countLike,
+            userAvatarName: AppConstants.nameAvatar,
             commented: AppConstants.commented,
             publicationTime: AppConstants.publicationTime,
-            pages: [AppConstants.postImage, AppConstants.secondPage, AppConstants.thirdPage]
+            imagePages: [AppConstants.postImage, AppConstants.secondPage, AppConstants.thirdPage]
         ),
         Recommend(
-            nameImage: AppConstants.nameImage,
-            nameUser: AppConstants.nameUserReccomend,
+            imageName: AppConstants.nameImage,
+            userName: AppConstants.nameUserReccomend,
             title: AppConstants.titleReccomend,
-            allText: AppConstants.rightTitle,
-            titleButton: AppConstants.subscribeText,
+            rightTitle: AppConstants.rightTitle,
+            buttonTitle: AppConstants.subscribeText,
             secondAvatar: AppConstants.secondAvatar,
-            secondNameUser: AppConstants.secondNameUser
+            secondUserName: AppConstants.secondNameUser
         ),
         Post(
-            avatarImage: AppConstants.avatarHourse,
-            nameUser: AppConstants.nameUser,
-            postImage: AppConstants.postImage,
+            avatarName: AppConstants.avatarHourse,
+            userName: AppConstants.nameUser,
+            imageForPostName: AppConstants.postImage,
             discriptionPost: AppConstants.discription,
-            likeImage: AppConstants.likeImage,
-            commentImage: AppConstants.commentImage,
-            sendImage: AppConstants.sendImage,
-            saveImage: AppConstants.saveImage,
-            likeTitle: AppConstants.countLike,
-            avatarUser: AppConstants.nameAvatar,
+            likeImageName: AppConstants.likeImage,
+            commentImageName: AppConstants.commentImage,
+            sendImageName: AppConstants.sendImage,
+            saveImageName: AppConstants.saveImage,
+            likeCount: AppConstants.countLike,
+            userAvatarName: AppConstants.nameAvatar,
             commented: AppConstants.commented,
             publicationTime: AppConstants.publicationTime,
-            pages: [AppConstants.postImage]
+            imagePages: [AppConstants.postImage]
         ),
         Post(
-            avatarImage: AppConstants.avatarHourse,
-            nameUser: AppConstants.nameUser,
-            postImage: AppConstants.postImage,
+            avatarName: AppConstants.avatarHourse,
+            userName: AppConstants.nameUser,
+            imageForPostName: AppConstants.postImage,
             discriptionPost: AppConstants.discription,
-            likeImage: AppConstants.likeImage,
-            commentImage: AppConstants.commentImage,
-            sendImage: AppConstants.sendImage,
-            saveImage: AppConstants.saveImage,
-            likeTitle: AppConstants.countLike,
-            avatarUser: AppConstants.nameAvatar,
+            likeImageName: AppConstants.likeImage,
+            commentImageName: AppConstants.commentImage,
+            sendImageName: AppConstants.sendImage,
+            saveImageName: AppConstants.saveImage,
+            likeCount: AppConstants.countLike,
+            userAvatarName: AppConstants.nameAvatar,
             commented: AppConstants.commented,
             publicationTime: AppConstants.publicationTime,
-            pages: [AppConstants.postImage]
+            imagePages: [AppConstants.postImage]
         ),
         Post(
-            avatarImage: AppConstants.avatarHourse,
-            nameUser: AppConstants.nameUser,
-            postImage: AppConstants.postImage,
+            avatarName: AppConstants.avatarHourse,
+            userName: AppConstants.nameUser,
+            imageForPostName: AppConstants.postImage,
             discriptionPost: AppConstants.discription,
-            likeImage: AppConstants.likeImage,
-            commentImage: AppConstants.commentImage,
-            sendImage: AppConstants.sendImage,
-            saveImage: AppConstants.saveImage,
-            likeTitle: AppConstants.countLike,
-            avatarUser: AppConstants.nameAvatar,
+            likeImageName: AppConstants.likeImage,
+            commentImageName: AppConstants.commentImage,
+            sendImageName: AppConstants.sendImage,
+            saveImageName: AppConstants.saveImage,
+            likeCount: AppConstants.countLike,
+            userAvatarName: AppConstants.nameAvatar,
             commented: AppConstants.commented,
             publicationTime: AppConstants.publicationTime,
-            pages: [AppConstants.postImage]
+            imagePages: [AppConstants.postImage]
         )
     ]
 

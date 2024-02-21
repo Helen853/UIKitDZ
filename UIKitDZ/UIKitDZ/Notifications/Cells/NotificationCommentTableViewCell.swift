@@ -28,22 +28,30 @@ final class NotificationCommentTableViewCell: UITableViewCell {
     // MARK: - Public Methods
 
     func configureCell(model: NotificationComment) {
+        configureNameImage(model: model)
+        configureTextLabel(model: model)
+    }
+
+    // MARK: - Private Methods
+
+    private func configureNameImage(model: NotificationComment) {
         avatarImageView.image = UIImage(named: model.avatarName)
+        pictureImageView.image = UIImage(named: model.imageName)
+    }
+    
+    private func configureTextLabel(model: NotificationComment) {
         let timeAction = NSAttributedString(
             string: model.notificationTime ?? "",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
         let boldAttributed = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)]
-        let comment = NSMutableAttributedString(string: model.actionUser)
-        let allText = NSMutableAttributedString(string: model.nameUser, attributes: boldAttributed)
+        let comment = NSMutableAttributedString(string: model.userActionText)
+        let allText = NSMutableAttributedString(string: model.userName, attributes: boldAttributed)
         allText.append(comment)
         allText.append(timeAction)
         commentLabel.attributedText = allText
-        pictureImageView.image = UIImage(named: model.nameImage)
     }
-
-    // MARK: - Private Methods
-
+    
     private func configureAvatar() {
         contentView.addSubview(avatarImageView)
         avatarImageView.clipsToBounds = true

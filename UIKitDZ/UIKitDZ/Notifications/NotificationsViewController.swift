@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Экран отображающий уведомления
+/// Экран уведомлений
 final class NotificationsViewController: UIViewController {
     // MARK: - Visual Components
 
@@ -14,60 +14,60 @@ final class NotificationsViewController: UIViewController {
     private let weekHeaderLabel = UILabel()
 
     // Массив с моделями ячеек
-    private var cellModels: [NotificationProtocol] = [
+    private var notifications: [NotificationProtocol] = [
         NotificationComment(
             avatarName: AppConstants.avatarLavanda,
-            nameUser: AppConstants.lavandaUser,
-            actionUser: AppConstants.commentText,
+            userName: AppConstants.lavandaUser,
+            userActionText: AppConstants.commentText,
             notificationTime: AppConstants.time,
-            nameImage: AppConstants.see
+            imageName: AppConstants.see
         ),
         NotificationComment(
             avatarName: AppConstants.avatarLavanda,
-            nameUser: AppConstants.lavandaUser,
-            actionUser: AppConstants.commentFirst,
+            userName: AppConstants.lavandaUser,
+            userActionText: AppConstants.commentFirst,
             notificationTime: AppConstants.time,
-            nameImage: AppConstants.see
+            imageName: AppConstants.see
         ),
         NotificationComment(
             avatarName: AppConstants.avatarLavanda,
-            nameUser: AppConstants.lavandaUser,
-            actionUser: AppConstants.commentSecond,
+            userName: AppConstants.lavandaUser,
+            userActionText: AppConstants.commentSecond,
             notificationTime: AppConstants.threeDays,
-            nameImage: AppConstants.lobi
+            imageName: AppConstants.lobi
         ),
         NotificationSubscription(
             avatarName: AppConstants.avatarMiho,
-            nameUser: AppConstants.mihoUser,
-            actionUser: AppConstants.commentThird,
+            userName: AppConstants.mihoUser,
+            userAction: AppConstants.commentThird,
             notificationTime: AppConstants.threeDays,
             buttonRight: AppConstants.subscribeText
         ),
         NotificationSubscription(
             avatarName: AppConstants.avatarLavanda,
-            nameUser: AppConstants.lavandaUser,
-            actionUser: AppConstants.commentFive,
+            userName: AppConstants.lavandaUser,
+            userAction: AppConstants.commentFive,
             notificationTime: AppConstants.fiveDays,
             buttonRight: AppConstants.subscribeText
         ),
         NotificationComment(
             avatarName: AppConstants.avatarLavanda,
-            nameUser: AppConstants.lavandaUser,
-            actionUser: AppConstants.commentFourth,
+            userName: AppConstants.lavandaUser,
+            userActionText: AppConstants.commentFourth,
             notificationTime: AppConstants.sevendays,
-            nameImage: AppConstants.lobi
+            imageName: AppConstants.lobi
         ),
         NotificationSubscription(
             avatarName: AppConstants.avatarMark,
-            nameUser: AppConstants.markUser,
-            actionUser: AppConstants.commentThird,
+            userName: AppConstants.markUser,
+            userAction: AppConstants.commentThird,
             notificationTime: AppConstants.eightDays,
             buttonRight: AppConstants.subscribeText
         ),
         NotificationSubscription(
             avatarName: AppConstants.avatarNeit,
-            nameUser: AppConstants.neitUser,
-            actionUser: AppConstants.commentThird,
+            userName: AppConstants.neitUser,
+            userAction: AppConstants.commentThird,
             notificationTime: AppConstants.eightDays,
             buttonRight: AppConstants.subscribeText
         )
@@ -147,7 +147,7 @@ extension NotificationsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let todayNotification = cellModels.filter {
+        let todayNotification = notifications.filter {
             guard
                 let actiontime = $0.notificationTime,
                 actiontime == " 12 ч"
@@ -156,7 +156,7 @@ extension NotificationsViewController: UITableViewDataSource {
             return true
         }
 
-        let anohterNotification = cellModels.filter {
+        let anohterNotification = notifications.filter {
             guard
                 let actiontime = $0.notificationTime,
                 actiontime != " 12 ч"
@@ -177,7 +177,7 @@ extension NotificationsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /// Делаем массивы моделек в которых лежат или "12 ч" посты, или иные.
-        let todayNotification = cellModels.filter {
+        let todayNotification = notifications.filter {
             guard
                 let actiontime = $0.notificationTime,
                 actiontime == " 12 ч"
@@ -186,7 +186,7 @@ extension NotificationsViewController: UITableViewDataSource {
             return true
         }
 
-        let anohterPost = cellModels.filter {
+        let anohterPost = notifications.filter {
             guard
                 let actiontime = $0.notificationTime,
                 actiontime != " 12 ч"
@@ -255,7 +255,7 @@ extension NotificationsViewController: UITableViewDataSource {
         commit editingStyle: UITableViewCell.EditingStyle,
         forRowAt indexPath: IndexPath
     ) {
-        cellModels.remove(at: indexPath.row)
+        notifications.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .left)
     }
 }

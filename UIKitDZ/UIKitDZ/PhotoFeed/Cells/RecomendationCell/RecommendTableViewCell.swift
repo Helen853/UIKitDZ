@@ -9,21 +9,16 @@ final class RecommendTableViewCell: UITableViewCell {
 
     private let titleLabel = UILabel()
     private let rightLabel = UILabel()
-
     private let groundView = UIView()
     private let secondGroundView = UIView()
-
     private let avatarImageView = UIImageView()
     private let secondAvatarImageView = UIImageView()
-
     private let nameUserLabel = UILabel()
     private let secondNameUserLabel = UILabel()
-
     private let subscribeButton = UIButton()
     private let secondSubscribeButton = UIButton()
     private let closeButton = UIButton()
     private let secondCloseButton = UIButton()
-
     private let scrollView = UIScrollView()
 
     // MARK: - Initializers
@@ -50,18 +45,31 @@ final class RecommendTableViewCell: UITableViewCell {
     // MARK: - Public Methods
 
     func configureCell(model: Recommend) {
-        titleLabel.text = model.title
-        rightLabel.text = model.allText
-        nameUserLabel.text = model.nameUser
-        secondNameUserLabel.text = model.secondNameUser
-        avatarImageView.image = UIImage(named: model.nameImage)
-        subscribeButton.setTitle(model.titleButton, for: .normal)
-        secondSubscribeButton.setTitle(model.titleButton, for: .normal)
-        secondAvatarImageView.image = UIImage(named: model.secondAvatar)
+        configureNameImage(model: model)
+        configureTextLabel(model: model)
+        configureTitleButton(model: model)
     }
 
     // MARK: - Private Methods
 
+    
+    private func configureNameImage(model: Recommend) {
+        avatarImageView.image = UIImage(named: model.imageName)
+        secondAvatarImageView.image = UIImage(named: model.secondAvatar)
+    }
+    
+    private func configureTextLabel(model: Recommend) {
+        titleLabel.text = model.title
+        rightLabel.text = model.rightTitle
+        nameUserLabel.text = model.userName
+        secondNameUserLabel.text = model.secondUserName
+    }
+    
+    private func configureTitleButton(model: Recommend) {
+        subscribeButton.setTitle(model.buttonTitle, for: .normal)
+        secondSubscribeButton.setTitle(model.buttonTitle, for: .normal)
+    }
+    
     private func configureContentView() {
         contentView.backgroundColor = #colorLiteral(red: 0.8560082316, green: 0.8998804688, blue: 0.9470122457, alpha: 1)
     }

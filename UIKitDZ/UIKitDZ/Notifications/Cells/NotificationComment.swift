@@ -1,25 +1,20 @@
-//
-//  NotificationComment.swift
-//  UIKitDZ
-//
-//  Created by Киса Мурлыса on 21.02.2024.
-//
+// NotificationComment.swift
+// Copyright © RoadMap. All rights reserved.
 
 import Foundation
 
-// Модель для ячейки с комментарием
+// Ячейка с комментарием
 struct NotificationComment: NotificationProtocol {
     // тип ячейки
     var cellType: NotificationTypes = .comment
-
     // Фото пользователя
     var avatarName: String
     // Никнейм пользователя
-    var nameUser: String
+    var userName: String
     // Описание действия пользователя
-    var actionUser: String
+    var userActionText: String
     // Время выполнения действия пользователя
     var notificationTime: String?
     // Имя картинки с которой взаимодействовал пользователь
-    var nameImage: String
+    var imageName: String
 }

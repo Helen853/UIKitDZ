@@ -3,14 +3,22 @@
 
 import Foundation
 
-/// Модель для ячейки с рекомендациями
+/// Рекомендации
 struct Recommend: CellTypeProtocol {
+    ///Тип ячейки
     var cellType: TableCellsTypes = .recomendation
-    var nameImage: String
-    var nameUser: String
+    ///Аватарка пользователя
+    var imageName: String
+    ///Имя пользователя
+    var userName: String
+    ///Заголовок ячейки
     var title: String
-    var allText: String
-    var titleButton: String
+    ///Заголовок справа ячейки
+    var rightTitle: String
+    ///Текст на кнопке
+    var buttonTitle: String
+    ///Аватар второго пользователя
     var secondAvatar: String
-    var secondNameUser: String
+    ///Имя второго пользователя
+    var secondUserName: String
 }
