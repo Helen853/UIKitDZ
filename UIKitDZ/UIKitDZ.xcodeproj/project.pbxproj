@@ -13,8 +13,10 @@
 		ED2076B22B71188A00B3400C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B12B71188A00B3400C /* Assets.xcassets */; };
 		ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */; };
 		ED3EC5162B85350C00A35708 /* NotificationCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC5152B85350C00A35708 /* NotificationCommentTableViewCell.swift */; };
-		ED3EC5182B85352E00A35708 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC5172B85352E00A35708 /* NotificationModel.swift */; };
+		ED3EC5182B85352E00A35708 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC5172B85352E00A35708 /* NotificationType.swift */; };
 		ED3EC51A2B8550DF00A35708 /* NotificationSubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC5192B8550DF00A35708 /* NotificationSubscriptionTableViewCell.swift */; };
+		ED3EC51C2B86142D00A35708 /* NotificationComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC51B2B86142D00A35708 /* NotificationComment.swift */; };
+		ED3EC51E2B86146400A35708 /* NotificationSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC51D2B86146400A35708 /* NotificationSubscription.swift */; };
 		EDEAFA4D2B83AB0800533100 /* PhotoFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA4C2B83AB0800533100 /* PhotoFeedViewController.swift */; };
 		EDEAFA4F2B83AB3000533100 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA4E2B83AB3000533100 /* NotificationsViewController.swift */; };
 		EDEAFA512B83AB4200533100 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAFA502B83AB4200533100 /* ProfileViewController.swift */; };
@@ -37,8 +39,10 @@
 		ED2076B42B71188A00B3400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2076B62B71188A00B3400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED3EC5152B85350C00A35708 /* NotificationCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCommentTableViewCell.swift; sourceTree = "<group>"; };
-		ED3EC5172B85352E00A35708 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		ED3EC5172B85352E00A35708 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		ED3EC5192B8550DF00A35708 /* NotificationSubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSubscriptionTableViewCell.swift; sourceTree = "<group>"; };
+		ED3EC51B2B86142D00A35708 /* NotificationComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComment.swift; sourceTree = "<group>"; };
+		ED3EC51D2B86146400A35708 /* NotificationSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSubscription.swift; sourceTree = "<group>"; };
 		EDEAFA4C2B83AB0800533100 /* PhotoFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedViewController.swift; sourceTree = "<group>"; };
 		EDEAFA4E2B83AB3000533100 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		EDEAFA502B83AB4200533100 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +103,9 @@
 			children = (
 				ED3EC5152B85350C00A35708 /* NotificationCommentTableViewCell.swift */,
 				ED3EC5192B8550DF00A35708 /* NotificationSubscriptionTableViewCell.swift */,
-				ED3EC5172B85352E00A35708 /* NotificationModel.swift */,
+				ED3EC5172B85352E00A35708 /* NotificationType.swift */,
+				ED3EC51D2B86146400A35708 /* NotificationSubscription.swift */,
+				ED3EC51B2B86142D00A35708 /* NotificationComment.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -305,9 +311,11 @@
 				ED3EC51A2B8550DF00A35708 /* NotificationSubscriptionTableViewCell.swift in Sources */,
 				EDEAFA5A2B83C53D00533100 /* RecommendTableViewCell.swift in Sources */,
 				EDEAFA512B83AB4200533100 /* ProfileViewController.swift in Sources */,
+				ED3EC51C2B86142D00A35708 /* NotificationComment.swift in Sources */,
 				EDEAFA562B83C40F00533100 /* StoriesTableViewCell.swift in Sources */,
-				ED3EC5182B85352E00A35708 /* NotificationModel.swift in Sources */,
+				ED3EC5182B85352E00A35708 /* NotificationType.swift in Sources */,
 				EDEAFA4F2B83AB3000533100 /* NotificationsViewController.swift in Sources */,
+				ED3EC51E2B86146400A35708 /* NotificationSubscription.swift in Sources */,
 				ED2076AD2B71188900B3400C /* LinkTabBarController.swift in Sources */,
 				ED3EC5162B85350C00A35708 /* NotificationCommentTableViewCell.swift in Sources */,
 				EDEAFA5C2B83CD2500533100 /* CellType.swift in Sources */,
