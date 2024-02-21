@@ -27,12 +27,12 @@ final class StoriesTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configAvatar()
-        configLabel()
+        configureAvatar()
+        configureLabel()
         setupAvatarStories()
-        configScroll()
-        configPlus()
-        configNameUser()
+        configureScroll()
+        configurePlus()
+        configureNameUser()
         setupNameUser()
     }
 
@@ -43,7 +43,7 @@ final class StoriesTableViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func configCell(model: Stories) {
+    func configureCell(model: Stories) {
         nameLabel.text = model.nameLabel
         avatarImageView.image = UIImage(named: model.nameImage)
         let storiesArray = [
@@ -60,7 +60,7 @@ final class StoriesTableViewCell: UITableViewCell {
 
     // MARK: - Private Methods
 
-    private func configNameUser() {
+    private func configureNameUser() {
         scrollView.addSubview(nameUserLabel)
         nameUserLabel.font = UIFont.systemFont(ofSize: 8)
         nameUserLabel.textColor = .black
@@ -73,7 +73,7 @@ final class StoriesTableViewCell: UITableViewCell {
         nameUserLabel.topAnchor.constraint(equalTo: avatarStoriesImageView.bottomAnchor, constant: -6).isActive = true
     }
 
-    private func configAllNameUser(nameUser: UILabel, avatar: UIImageView) {
+    private func configureNameUser(nameUser: UILabel, avatar: UIImageView) {
         scrollView.addSubview(nameUser)
         nameUser.font = UIFont.systemFont(ofSize: 8)
         nameUser.textColor = .black
@@ -87,12 +87,12 @@ final class StoriesTableViewCell: UITableViewCell {
     }
 
     private func setupNameUser() {
-        configAllNameUser(nameUser: secondNameUserLabel, avatar: avatar2StoriesImageView)
-        configAllNameUser(nameUser: thirdNameUserLabel, avatar: avatar3StoriesImageView)
-        configAllNameUser(nameUser: fourthNameUserLabel, avatar: avatar4StoriesImageView)
+        configureNameUser(nameUser: secondNameUserLabel, avatar: avatar2StoriesImageView)
+        configureNameUser(nameUser: thirdNameUserLabel, avatar: avatar3StoriesImageView)
+        configureNameUser(nameUser: fourthNameUserLabel, avatar: avatar4StoriesImageView)
     }
 
-    private func configPlus() {
+    private func configurePlus() {
         scrollView.addSubview(plusLabel)
         plusLabel.backgroundColor = #colorLiteral(red: 0.9401339889, green: 0.3725178838, blue: 0.4427154064, alpha: 1)
         plusLabel.layer.masksToBounds = true
@@ -108,7 +108,7 @@ final class StoriesTableViewCell: UITableViewCell {
         plusLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 40).isActive = true
     }
 
-    private func configAvatar() {
+    private func configureAvatar() {
         scrollView.addSubview(avatarImageView)
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         avatarImageView.layer.cornerRadius = 30
@@ -120,7 +120,7 @@ final class StoriesTableViewCell: UITableViewCell {
         scrollView.heightAnchor.constraint(equalTo: avatarImageView.heightAnchor, constant: 10).isActive = true
     }
 
-    private func convigAvatarStories(nameAvatar: UIImageView, left: CGFloat) {
+    private func convigureAvatarStories(nameAvatar: UIImageView, left: CGFloat) {
         scrollView.addSubview(nameAvatar)
         nameAvatar.translatesAutoresizingMaskIntoConstraints = false
         nameAvatar.layer.cornerRadius = 30
@@ -132,14 +132,14 @@ final class StoriesTableViewCell: UITableViewCell {
     }
 
     private func setupAvatarStories() {
-        convigAvatarStories(nameAvatar: avatarStoriesImageView, left: 94)
-        convigAvatarStories(nameAvatar: avatar2StoriesImageView, left: 176)
-        convigAvatarStories(nameAvatar: avatar3StoriesImageView, left: 258)
-        convigAvatarStories(nameAvatar: avatar4StoriesImageView, left: 340)
+        convigureAvatarStories(nameAvatar: avatarStoriesImageView, left: 94)
+        convigureAvatarStories(nameAvatar: avatar2StoriesImageView, left: 176)
+        convigureAvatarStories(nameAvatar: avatar3StoriesImageView, left: 258)
+        convigureAvatarStories(nameAvatar: avatar4StoriesImageView, left: 340)
         avatar4StoriesImageView.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -12).isActive = true
     }
 
-    private func configLabel() {
+    private func configureLabel() {
         scrollView.addSubview(nameLabel)
         nameLabel.font = UIFont.systemFont(ofSize: 8)
         nameLabel.textColor = #colorLiteral(red: 0.6321665049, green: 0.6357643008, blue: 0.6358397603, alpha: 1)
@@ -153,7 +153,7 @@ final class StoriesTableViewCell: UITableViewCell {
         scrollView.heightAnchor.constraint(equalTo: avatarImageView.heightAnchor, constant: 10).isActive = true
     }
 
-    private func configScroll() {
+    private func configureScroll() {
         contentView.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.contentSize = contentView.bounds.size

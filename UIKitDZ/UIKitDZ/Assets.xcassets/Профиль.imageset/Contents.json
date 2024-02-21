@@ -1,8 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Профиль черный.pdf",
-      "idiom" : "universal"
+      "filename" : "Профиль.pdf",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

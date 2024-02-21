@@ -15,9 +15,9 @@ final class NotificationSubscriptionTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configAvatar()
-        configLabel()
-        configButton()
+        configureAvatar()
+        configureLabel()
+        configureButton()
     }
 
     @available(*, unavailable)
@@ -27,10 +27,10 @@ final class NotificationSubscriptionTableViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func configCell(model: NotificationSubscription) {
+    func configureCell(model: NotificationSubscription) {
         avatarImageView.image = UIImage(named: model.avatarName)
         let timeAction = NSAttributedString(
-            string: model.timeAction ?? "",
+            string: model.notificationTime ?? "",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
         let boldAttributed = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)]
@@ -39,12 +39,12 @@ final class NotificationSubscriptionTableViewCell: UITableViewCell {
         allText.append(comment)
         allText.append(timeAction)
         commentLabel.attributedText = allText
-        subscriptionButton.setTitle(model.rightAction, for: .normal)
+        subscriptionButton.setTitle(model.buttonRight, for: .normal)
     }
 
     // MARK: - Private Methods
 
-    private func configAvatar() {
+    private func configureAvatar() {
         contentView.addSubview(avatarImageView)
         avatarImageView.clipsToBounds = true
         avatarImageView.layer.cornerRadius = 15
@@ -56,7 +56,7 @@ final class NotificationSubscriptionTableViewCell: UITableViewCell {
         avatarImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
     }
 
-    private func configLabel() {
+    private func configureLabel() {
         contentView.addSubview(commentLabel)
         commentLabel.font = UIFont.systemFont(ofSize: 12)
         commentLabel.numberOfLines = 3
@@ -68,7 +68,7 @@ final class NotificationSubscriptionTableViewCell: UITableViewCell {
         commentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
 
-    private func configButton() {
+    private func configureButton() {
         contentView.addSubview(subscriptionButton)
         subscriptionButton.setTitleColor(.white, for: .normal)
         subscriptionButton.backgroundColor = #colorLiteral(red: 0, green: 0.5694641471, blue: 1, alpha: 1)

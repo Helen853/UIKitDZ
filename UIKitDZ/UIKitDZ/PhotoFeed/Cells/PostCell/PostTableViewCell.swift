@@ -14,7 +14,6 @@ final class PostTableViewCell: UITableViewCell {
     private let secondPageImageView = UIImageView()
     private let thirdPageImageView = UIImageView()
 
-    private let discriptionLabel = UILabel()
     private let ellipsesLabel = UILabel()
     private let likeLabel = UILabel()
     private let dicriptionLabel = UILabel()
@@ -36,15 +35,15 @@ final class PostTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configAvatar()
-        configNickName()
-        configScroll()
+        configureAvatar()
+        configureNickName()
+        configureScroll()
         setupActionImage()
-        configLikeLabel()
-        configDiscription()
-        configAvatarUser()
-        configCommentLabel()
-        confugPublicationTime()
+        configureLikeLabel()
+        configureDiscription()
+        configureAvatarUser()
+        configureCommentLabel()
+        confugurePublicationTime()
     }
 
     @available(*, unavailable)
@@ -54,7 +53,7 @@ final class PostTableViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func configCell(model: Post) {
+    func configureCell(model: Post) {
         avatarImageView.image = UIImage(named: model.avatarImage)
         nameUserLabel.text = model.nameUser
         postImageView.image = UIImage(named: model.postImage)
@@ -63,7 +62,7 @@ final class PostTableViewCell: UITableViewCell {
         sendImageView.image = UIImage(named: model.sendImage)
         saveImageView.image = UIImage(named: model.saveImage)
         likeLabel.text = model.likeTitle
-        dicriptionLabel.text = model.discription
+        dicriptionLabel.text = model.discriptionPost
         avatarUserImageView.image = UIImage(named: model.avatarUser)
         commentedLabel.text = model.commented
         publicationTimeLabel.text = model.publicationTime
@@ -76,7 +75,7 @@ final class PostTableViewCell: UITableViewCell {
 
     // MARK: - Private Methods
 
-    private func configAvatar() {
+    private func configureAvatar() {
         contentView.addSubview(avatarImageView)
         avatarImageView.clipsToBounds = true
         avatarImageView.layer.cornerRadius = 15
@@ -87,7 +86,7 @@ final class PostTableViewCell: UITableViewCell {
         avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
     }
 
-    private func configNickName() {
+    private func configureNickName() {
         contentView.addSubview(nameUserLabel)
         nameUserLabel.textAlignment = .center
         nameUserLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
@@ -98,7 +97,7 @@ final class PostTableViewCell: UITableViewCell {
         nameUserLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
     }
 
-    private func configPostImage(nameImage: UIImageView) {
+    private func configurePostImage(nameImage: UIImageView) {
         scrollView.addSubview(nameImage)
         nameImage.translatesAutoresizingMaskIntoConstraints = false
         nameImage.widthAnchor.constraint(equalToConstant: 375).isActive = true
@@ -107,7 +106,7 @@ final class PostTableViewCell: UITableViewCell {
         nameImage.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
     }
 
-    private func configActionImage(nameImageView: UIImageView, width: CGFloat, hight: CGFloat) {
+    private func configureActionImage(nameImageView: UIImageView, width: CGFloat, hight: CGFloat) {
         contentView.addSubview(nameImageView)
         nameImageView.translatesAutoresizingMaskIntoConstraints = false
         nameImageView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 11).isActive = true
@@ -116,17 +115,17 @@ final class PostTableViewCell: UITableViewCell {
     }
 
     private func setupActionImage() {
-        configActionImage(nameImageView: likeImageView, width: 18, hight: 16)
+        configureActionImage(nameImageView: likeImageView, width: 18, hight: 16)
         likeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 13).isActive = true
-        configActionImage(nameImageView: commentImageView, width: 19, hight: 19)
+        configureActionImage(nameImageView: commentImageView, width: 19, hight: 19)
         commentImageView.leadingAnchor.constraint(equalTo: likeImageView.trailingAnchor, constant: 11).isActive = true
-        configActionImage(nameImageView: sendImageView, width: 17, hight: 17)
+        configureActionImage(nameImageView: sendImageView, width: 17, hight: 17)
         sendImageView.leadingAnchor.constraint(equalTo: commentImageView.trailingAnchor, constant: 12).isActive = true
-        configActionImage(nameImageView: saveImageView, width: 14, hight: 18)
+        configureActionImage(nameImageView: saveImageView, width: 14, hight: 18)
         saveImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -14).isActive = true
     }
 
-    private func configLikeLabel() {
+    private func configureLikeLabel() {
         contentView.addSubview(likeLabel)
         likeLabel.textColor = .black
         likeLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
@@ -137,7 +136,7 @@ final class PostTableViewCell: UITableViewCell {
         likeLabel.topAnchor.constraint(equalTo: likeImageView.bottomAnchor, constant: 6).isActive = true
     }
 
-    private func configDiscription() {
+    private func configureDiscription() {
         contentView.addSubview(dicriptionLabel)
         dicriptionLabel.textColor = .black
         dicriptionLabel.font = UIFont.systemFont(ofSize: 10)
@@ -149,7 +148,7 @@ final class PostTableViewCell: UITableViewCell {
         dicriptionLabel.topAnchor.constraint(equalTo: likeLabel.bottomAnchor, constant: 6).isActive = true
     }
 
-    private func configAvatarUser() {
+    private func configureAvatarUser() {
         contentView.addSubview(avatarUserImageView)
         avatarUserImageView.translatesAutoresizingMaskIntoConstraints = false
         avatarUserImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
@@ -158,7 +157,7 @@ final class PostTableViewCell: UITableViewCell {
         avatarUserImageView.topAnchor.constraint(equalTo: dicriptionLabel.bottomAnchor, constant: 4).isActive = true
     }
 
-    private func configCommentLabel() {
+    private func configureCommentLabel() {
         contentView.addSubview(commentedLabel)
         commentedLabel.textColor = #colorLiteral(red: 0.6321665049, green: 0.6357643008, blue: 0.6358397603, alpha: 1)
         commentedLabel.font = UIFont.systemFont(ofSize: 10)
@@ -170,7 +169,7 @@ final class PostTableViewCell: UITableViewCell {
         commentedLabel.topAnchor.constraint(equalTo: dicriptionLabel.bottomAnchor, constant: 6).isActive = true
     }
 
-    private func confugPublicationTime() {
+    private func confugurePublicationTime() {
         contentView.addSubview(publicationTimeLabel)
         publicationTimeLabel.textColor = #colorLiteral(red: 0.6321665049, green: 0.6357643008, blue: 0.6358397603, alpha: 1)
         publicationTimeLabel.font = UIFont.systemFont(ofSize: 10)
@@ -183,7 +182,7 @@ final class PostTableViewCell: UITableViewCell {
         publicationTimeLabel.topAnchor.constraint(equalTo: commentedLabel.bottomAnchor, constant: 7).isActive = true
     }
 
-    private func configScroll() {
+    private func configureScroll() {
         contentView.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isPagingEnabled = true
@@ -192,9 +191,9 @@ final class PostTableViewCell: UITableViewCell {
         scrollView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 10).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
 
-        configPostImage(nameImage: postImageView)
-        configPostImage(nameImage: secondPageImageView)
-        configPostImage(nameImage: thirdPageImageView)
+        configurePostImage(nameImage: postImageView)
+        configurePostImage(nameImage: secondPageImageView)
+        configurePostImage(nameImage: thirdPageImageView)
 
         postImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         secondPageImageView.leadingAnchor.constraint(equalTo: postImageView.trailingAnchor).isActive = true

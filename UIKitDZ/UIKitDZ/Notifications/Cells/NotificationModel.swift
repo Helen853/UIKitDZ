@@ -1,9 +1,13 @@
-// Notification.swift
+// NotificationModel.swift
 // Copyright © RoadMap. All rights reserved.
 
 import Foundation
 
-// MARK: - Types
+/// Протокол предоставляет информацию о типе модели и времени уведомления
+protocol NotificationProtocol {
+    var cellType: NotificationTypes { get }
+    var notificationTime: String? { get }
+}
 
 // Модель для ячейки с комментарием
 struct NotificationComment: NotificationProtocol {
@@ -17,7 +21,7 @@ struct NotificationComment: NotificationProtocol {
     // Описание действия пользователя
     var actionUser: String
     // Время выполнения действия пользователя
-    var timeAction: String?
+    var notificationTime: String?
     // Имя картинки с которой взаимодействовал пользователь
     var nameImage: String
 }
@@ -34,18 +38,13 @@ struct NotificationSubscription: NotificationProtocol {
     // Описание действия пользователя
     var actionUser: String
     // Время выполнения действия пользователя
-    var timeAction: String?
+    var notificationTime: String?
     // Кнопка справа с действием "Подписаться"
-    var rightAction: String
+    var buttonRight: String
 }
 
 // Енам для типов ячеек
 enum NotificationTypes {
     case comment
     case subscription
-}
-
-protocol NotificationProtocol {
-    var cellType: NotificationTypes { get }
-    var timeAction: String? { get }
 }

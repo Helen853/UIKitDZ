@@ -30,16 +30,16 @@ final class RecommendTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configContentView()
-        configScroll()
-        configTitle()
-        configRightTitle()
-        configView()
-        configImage()
-        configCesondView()
-        configNickName()
-        configButton()
-        configCloseButton()
+        configureContentView()
+        configureScroll()
+        configureTitle()
+        configureRightTitle()
+        configureView()
+        configureImage()
+        configureCesondView()
+        configureNickName()
+        configureButton()
+        configureCloseButton()
     }
 
     @available(*, unavailable)
@@ -49,7 +49,7 @@ final class RecommendTableViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func configCell(model: Recommend) {
+    func configureCell(model: Recommend) {
         titleLabel.text = model.title
         rightLabel.text = model.allText
         nameUserLabel.text = model.nameUser
@@ -62,11 +62,11 @@ final class RecommendTableViewCell: UITableViewCell {
 
     // MARK: - Private Methods
 
-    private func configContentView() {
+    private func configureContentView() {
         contentView.backgroundColor = #colorLiteral(red: 0.8560082316, green: 0.8998804688, blue: 0.9470122457, alpha: 1)
     }
 
-    private func configScroll() {
+    private func configureScroll() {
         contentView.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.contentSize = contentView.bounds.size
@@ -77,7 +77,7 @@ final class RecommendTableViewCell: UITableViewCell {
         contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
     }
 
-    private func configTitle() {
+    private func configureTitle() {
         scrollView.addSubview(titleLabel)
         titleLabel.font = UIFont.systemFont(ofSize: 10, weight: .bold)
         titleLabel.textColor = .black
@@ -89,7 +89,7 @@ final class RecommendTableViewCell: UITableViewCell {
         scrollView.heightAnchor.constraint(equalToConstant: 270).isActive = true
     }
 
-    private func configRightTitle() {
+    private func configureRightTitle() {
         scrollView.addSubview(rightLabel)
         rightLabel.font = UIFont.systemFont(ofSize: 10, weight: .bold)
         rightLabel.textAlignment = .right
@@ -101,7 +101,7 @@ final class RecommendTableViewCell: UITableViewCell {
         rightLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 9).isActive = true
     }
 
-    private func configView() {
+    private func configureView() {
         scrollView.addSubview(groundView)
         groundView.backgroundColor = .white
         groundView.translatesAutoresizingMaskIntoConstraints = false
@@ -112,7 +112,7 @@ final class RecommendTableViewCell: UITableViewCell {
         groundView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 17).isActive = true
     }
 
-    private func configCesondView() {
+    private func configureCesondView() {
         scrollView.addSubview(secondGroundView)
         secondGroundView.backgroundColor = .white
         secondGroundView.translatesAutoresizingMaskIntoConstraints = false
@@ -124,7 +124,7 @@ final class RecommendTableViewCell: UITableViewCell {
         secondGroundView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 17).isActive = true
     }
 
-    private func configImage() {
+    private func configureImage() {
         groundView.addSubview(avatarImageView)
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         avatarImageView.widthAnchor.constraint(equalToConstant: 115).isActive = true
@@ -141,7 +141,7 @@ final class RecommendTableViewCell: UITableViewCell {
             .isActive = true
     }
 
-    private func configNickName() {
+    private func configureNickName() {
         groundView.addSubview(nameUserLabel)
         nameUserLabel.font = UIFont.systemFont(ofSize: 10)
         nameUserLabel.textAlignment = .center
@@ -162,7 +162,7 @@ final class RecommendTableViewCell: UITableViewCell {
             .isActive = true
     }
 
-    private func configButton() {
+    private func configureButton() {
         groundView.addSubview(subscribeButton)
         subscribeButton.backgroundColor = #colorLiteral(red: 0, green: 0.5694641471, blue: 1, alpha: 1)
         subscribeButton.layer.cornerRadius = 8
@@ -186,7 +186,7 @@ final class RecommendTableViewCell: UITableViewCell {
             .isActive = true
     }
 
-    private func configCloseButton() {
+    private func configureCloseButton() {
         groundView.addSubview(closeButton)
         closeButton.setImage(UIImage(named: AppConstants.closeText), for: .normal)
         closeButton.translatesAutoresizingMaskIntoConstraints = false

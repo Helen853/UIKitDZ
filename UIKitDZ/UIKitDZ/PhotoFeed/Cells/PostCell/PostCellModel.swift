@@ -3,8 +3,6 @@
 
 import Foundation
 
-// MARK: - Types
-
 /// Модель для ячейки с постом
 struct Post: CellTypeProtocol {
     var cellType: TableCellsTypes = .post
@@ -12,7 +10,7 @@ struct Post: CellTypeProtocol {
     var avatarImage: String
     var nameUser: String
     var postImage: String
-    var discription: String
+    var discriptionPost: String
     var likeImage: String
     var commentImage: String
     var sendImage: String

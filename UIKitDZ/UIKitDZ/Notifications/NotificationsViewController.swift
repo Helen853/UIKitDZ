@@ -19,57 +19,57 @@ final class NotificationsViewController: UIViewController {
             avatarName: AppConstants.avatarLavanda,
             nameUser: AppConstants.lavandaUser,
             actionUser: AppConstants.commentText,
-            timeAction: AppConstants.time,
+            notificationTime: AppConstants.time,
             nameImage: AppConstants.see
         ),
         NotificationComment(
             avatarName: AppConstants.avatarLavanda,
             nameUser: AppConstants.lavandaUser,
             actionUser: AppConstants.commentFirst,
-            timeAction: AppConstants.time,
+            notificationTime: AppConstants.time,
             nameImage: AppConstants.see
         ),
         NotificationComment(
             avatarName: AppConstants.avatarLavanda,
             nameUser: AppConstants.lavandaUser,
             actionUser: AppConstants.commentSecond,
-            timeAction: AppConstants.threeDays,
+            notificationTime: AppConstants.threeDays,
             nameImage: AppConstants.lobi
         ),
         NotificationSubscription(
             avatarName: AppConstants.avatarMiho,
             nameUser: AppConstants.mihoUser,
             actionUser: AppConstants.commentThird,
-            timeAction: AppConstants.threeDays,
-            rightAction: AppConstants.subscribeText
+            notificationTime: AppConstants.threeDays,
+            buttonRight: AppConstants.subscribeText
         ),
         NotificationSubscription(
             avatarName: AppConstants.avatarLavanda,
             nameUser: AppConstants.lavandaUser,
             actionUser: AppConstants.commentFive,
-            timeAction: AppConstants.fiveDays,
-            rightAction: AppConstants.subscribeText
+            notificationTime: AppConstants.fiveDays,
+            buttonRight: AppConstants.subscribeText
         ),
         NotificationComment(
             avatarName: AppConstants.avatarLavanda,
             nameUser: AppConstants.lavandaUser,
             actionUser: AppConstants.commentFourth,
-            timeAction: AppConstants.sevendays,
+            notificationTime: AppConstants.sevendays,
             nameImage: AppConstants.lobi
         ),
         NotificationSubscription(
             avatarName: AppConstants.avatarMark,
             nameUser: AppConstants.markUser,
             actionUser: AppConstants.commentThird,
-            timeAction: AppConstants.eightDays,
-            rightAction: AppConstants.subscribeText
+            notificationTime: AppConstants.eightDays,
+            buttonRight: AppConstants.subscribeText
         ),
         NotificationSubscription(
             avatarName: AppConstants.avatarNeit,
             nameUser: AppConstants.neitUser,
             actionUser: AppConstants.commentThird,
-            timeAction: AppConstants.eightDays,
-            rightAction: AppConstants.subscribeText
+            notificationTime: AppConstants.eightDays,
+            buttonRight: AppConstants.subscribeText
         )
     ]
 
@@ -77,20 +77,20 @@ final class NotificationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configTitle()
-        configRequestTitle()
-        configTable()
+        configureTitle()
+        configureRequestTitle()
+        configureTable()
         registerCell()
     }
 
     // MARK: - Private Methods
 
-    private func configTitle() {
+    private func configureTitle() {
         navigationItem.title = AppConstants.notificationTitle
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
-    private func configRequestTitle() {
+    private func configureRequestTitle() {
         view.addSubview(requestLabel)
         requestLabel.text = AppConstants.requestTitle
         requestLabel.font = UIFont.systemFont(ofSize: 14)
@@ -101,7 +101,7 @@ final class NotificationsViewController: UIViewController {
         requestLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
     }
 
-    private func configTable() {
+    private func configureTable() {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -139,7 +139,9 @@ final class NotificationsViewController: UIViewController {
     }
 }
 
-extension NotificationsViewController: UITableViewDataSource, UITableViewDelegate {
+// MARK: - Extension UITableViewDataSource
+
+extension NotificationsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         2
     }
@@ -147,7 +149,7 @@ extension NotificationsViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let todayNotification = cellModels.filter {
             guard
-                let actiontime = $0.timeAction,
+                let actiontime = $0.notificationTime,
                 actiontime == " 12 ч"
             else { return false }
 
@@ -156,7 +158,7 @@ extension NotificationsViewController: UITableViewDataSource, UITableViewDelegat
 
         let anohterNotification = cellModels.filter {
             guard
-                let actiontime = $0.timeAction,
+                let actiontime = $0.notificationTime,
                 actiontime != " 12 ч"
             else { return false }
 
@@ -174,10 +176,10 @@ extension NotificationsViewController: UITableViewDataSource, UITableViewDelegat
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /// Делаем массивы моделек в которых лежат или 12 ч посты, или иные.
+        /// Делаем массивы моделек в которых лежат или "12 ч" посты, или иные.
         let todayNotification = cellModels.filter {
             guard
-                let actiontime = $0.timeAction,
+                let actiontime = $0.notificationTime,
                 actiontime == " 12 ч"
             else { return false }
 
@@ -186,7 +188,7 @@ extension NotificationsViewController: UITableViewDataSource, UITableViewDelegat
 
         let anohterPost = cellModels.filter {
             guard
-                let actiontime = $0.timeAction,
+                let actiontime = $0.notificationTime,
                 actiontime != " 12 ч"
             else { return false }
 
@@ -211,7 +213,7 @@ extension NotificationsViewController: UITableViewDataSource, UITableViewDelegat
                 else {
                     return UITableViewCell()
                 }
-                cell.configCell(model: model)
+                cell.configureCell(model: model)
                 return cell
             case .subscription:
                 guard
@@ -224,7 +226,7 @@ extension NotificationsViewController: UITableViewDataSource, UITableViewDelegat
                 else {
                     return UITableViewCell()
                 }
-                cell.configCell(model: model)
+                cell.configureCell(model: model)
                 return cell
             }
         }
@@ -247,7 +249,21 @@ extension NotificationsViewController: UITableViewDataSource, UITableViewDelegat
         return baseCell
     }
 
-    /// Настраиваем хэдэр для секций
+    // Удаление ячейки
+    func tableView(
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath
+    ) {
+        cellModels.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .left)
+    }
+}
+
+// MARK: - Extension UITableViewDelegate
+
+extension NotificationsViewController: UITableViewDelegate {
+    // Настраиваем хэдэр для секций
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case 0:
@@ -261,16 +277,8 @@ extension NotificationsViewController: UITableViewDataSource, UITableViewDelegat
         }
     }
 
+    // Расстояние между секциями
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         20
-    }
-
-    func tableView(
-        _ tableView: UITableView,
-        commit editingStyle: UITableViewCell.EditingStyle,
-        forRowAt indexPath: IndexPath
-    ) {
-        cellModels.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .left)
     }
 }

@@ -15,9 +15,9 @@ final class NotificationCommentTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configAvatar()
-        configLabel()
-        configPicture()
+        configureAvatar()
+        configureLabel()
+        configurePicture()
     }
 
     @available(*, unavailable)
@@ -27,10 +27,10 @@ final class NotificationCommentTableViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func configCell(model: NotificationComment) {
+    func configureCell(model: NotificationComment) {
         avatarImageView.image = UIImage(named: model.avatarName)
         let timeAction = NSAttributedString(
-            string: model.timeAction ?? "",
+            string: model.notificationTime ?? "",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
         let boldAttributed = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)]
@@ -44,7 +44,7 @@ final class NotificationCommentTableViewCell: UITableViewCell {
 
     // MARK: - Private Methods
 
-    private func configAvatar() {
+    private func configureAvatar() {
         contentView.addSubview(avatarImageView)
         avatarImageView.clipsToBounds = true
         avatarImageView.layer.cornerRadius = 15
@@ -56,7 +56,7 @@ final class NotificationCommentTableViewCell: UITableViewCell {
         avatarImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
     }
 
-    private func configLabel() {
+    private func configureLabel() {
         contentView.addSubview(commentLabel)
         commentLabel.font = UIFont.systemFont(ofSize: 12)
         commentLabel.numberOfLines = 2
@@ -67,7 +67,7 @@ final class NotificationCommentTableViewCell: UITableViewCell {
         commentLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2).isActive = true
     }
 
-    private func configPicture() {
+    private func configurePicture() {
         contentView.addSubview(pictureImageView)
         pictureImageView.translatesAutoresizingMaskIntoConstraints = false
         pictureImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true

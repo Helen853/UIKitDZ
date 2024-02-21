@@ -3,8 +3,6 @@
 
 import Foundation
 
-// MARK: - Types
-
 /// Модель для ячейки с историями
 struct Stories: CellTypeProtocol {
     let cellType: TableCellsTypes = .stories

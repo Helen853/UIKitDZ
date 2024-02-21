@@ -3,14 +3,18 @@
 
 import UIKit
 
-/// класс
-class LinkTabBarController: UITabBarController {
+/// Настройка панели табБара
+final class LinkTabBarController: UITabBarController {
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.itemPositioning = .centered
         generateTabBar()
         setTabBarAppearance()
     }
+
+    // MARK: - Private Methods
 
     private func generateTabBar() {
         viewControllers = [

@@ -23,7 +23,7 @@ final class PhotoFeedViewController: UIViewController {
             avatarImage: AppConstants.avatarHourse,
             nameUser: AppConstants.nameUser,
             postImage: AppConstants.postImage,
-            discription: AppConstants.discription,
+            discriptionPost: AppConstants.discription,
             likeImage: AppConstants.likeImage,
             commentImage: AppConstants.commentImage,
             sendImage: AppConstants.sendImage,
@@ -47,7 +47,7 @@ final class PhotoFeedViewController: UIViewController {
             avatarImage: AppConstants.avatarHourse,
             nameUser: AppConstants.nameUser,
             postImage: AppConstants.postImage,
-            discription: AppConstants.discription,
+            discriptionPost: AppConstants.discription,
             likeImage: AppConstants.likeImage,
             commentImage: AppConstants.commentImage,
             sendImage: AppConstants.sendImage,
@@ -62,7 +62,7 @@ final class PhotoFeedViewController: UIViewController {
             avatarImage: AppConstants.avatarHourse,
             nameUser: AppConstants.nameUser,
             postImage: AppConstants.postImage,
-            discription: AppConstants.discription,
+            discriptionPost: AppConstants.discription,
             likeImage: AppConstants.likeImage,
             commentImage: AppConstants.commentImage,
             sendImage: AppConstants.sendImage,
@@ -77,7 +77,7 @@ final class PhotoFeedViewController: UIViewController {
             avatarImage: AppConstants.avatarHourse,
             nameUser: AppConstants.nameUser,
             postImage: AppConstants.postImage,
-            discription: AppConstants.discription,
+            discriptionPost: AppConstants.discription,
             likeImage: AppConstants.likeImage,
             commentImage: AppConstants.commentImage,
             sendImage: AppConstants.sendImage,
@@ -94,16 +94,15 @@ final class PhotoFeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configNavigationBar()
+        configureNavigationBar()
         registerCell()
-        configTable()
+        configureTable()
     }
 
     // MARK: - Private Methods
 
-    private func configTable() {
+    private func configureTable() {
         view.addSubview(tableView)
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 144
         tableView.rowHeight = UITableView.automaticDimension
@@ -115,7 +114,7 @@ final class PhotoFeedViewController: UIViewController {
         tableView.separatorStyle = .none
     }
 
-    private func configNavigationBar() {
+    private func configureNavigationBar() {
         leftItemImageView.image = UIImage(named: AppConstants.nameImageLeftItem)
         rightItemImageView.image = UIImage(named: AppConstants.nameImageRightItem)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftItemImageView)
@@ -129,7 +128,7 @@ final class PhotoFeedViewController: UIViewController {
     }
 }
 
-extension PhotoFeedViewController: UITableViewDataSource, UITableViewDelegate {
+extension PhotoFeedViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         cellModels.count
     }
@@ -150,7 +149,7 @@ extension PhotoFeedViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 return UITableViewCell()
             }
-            cell.configCell(model: model)
+            cell.configureCell(model: model)
             return cell
         case .post:
             guard
@@ -160,7 +159,7 @@ extension PhotoFeedViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 return UITableViewCell()
             }
-            cell.configCell(model: model)
+            cell.configureCell(model: model)
             return cell
         case .recomendation:
             guard
@@ -170,7 +169,7 @@ extension PhotoFeedViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 return UITableViewCell()
             }
-            cell.configCell(model: model)
+            cell.configureCell(model: model)
             return cell
         }
     }
