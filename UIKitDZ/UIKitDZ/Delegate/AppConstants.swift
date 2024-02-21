@@ -4,6 +4,9 @@
 import Foundation
 
 struct AppConstants {
+    
+    // MARK: - Constants
+    
     static let photoFeedTabBarTitle = "Лента"
     static let notificationsTabBarTitle = "Уведомления"
     static let profileTabBarTitle = "Профиль"
