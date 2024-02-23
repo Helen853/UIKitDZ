@@ -17,7 +17,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func configureRootViewController(_ windowScene: UIWindowScene) {
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = LinkTabBarController()
+        window?.rootViewController = MainTabBarController()
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
     }
