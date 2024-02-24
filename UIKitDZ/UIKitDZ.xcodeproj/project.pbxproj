@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED2076A92B71188900B3400C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076A82B71188900B3400C /* AppDelegate.swift */; };
 		ED2076AB2B71188900B3400C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076AA2B71188900B3400C /* SceneDelegate.swift */; };
-		ED2076AD2B71188900B3400C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076AC2B71188900B3400C /* ViewController.swift */; };
+		ED2076AD2B71188900B3400C /* TrafficLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2076AC2B71188900B3400C /* TrafficLightViewController.swift */; };
 		ED2076B02B71188900B3400C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076AE2B71188900B3400C /* Main.storyboard */; };
 		ED2076B22B71188A00B3400C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B12B71188A00B3400C /* Assets.xcassets */; };
 		ED2076B52B71188A00B3400C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		ED2076A52B71188900B3400C /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2076A82B71188900B3400C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED2076AA2B71188900B3400C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ED2076AC2B71188900B3400C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED2076AC2B71188900B3400C /* TrafficLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightViewController.swift; sourceTree = "<group>"; };
 		ED2076AF2B71188900B3400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED2076B12B71188A00B3400C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2076B42B71188A00B3400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			children = (
 				ED2076A82B71188900B3400C /* AppDelegate.swift */,
 				ED2076AA2B71188900B3400C /* SceneDelegate.swift */,
-				ED2076AC2B71188900B3400C /* ViewController.swift */,
+				ED2076AC2B71188900B3400C /* TrafficLightViewController.swift */,
 				ED2076AE2B71188900B3400C /* Main.storyboard */,
 				ED2076B12B71188A00B3400C /* Assets.xcassets */,
 				ED2076B32B71188A00B3400C /* LaunchScreen.storyboard */,
@@ -183,7 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED2076AD2B71188900B3400C /* ViewController.swift in Sources */,
+				ED2076AD2B71188900B3400C /* TrafficLightViewController.swift in Sources */,
 				ED2076A92B71188900B3400C /* AppDelegate.swift in Sources */,
 				ED2076AB2B71188900B3400C /* SceneDelegate.swift in Sources */,
 			);

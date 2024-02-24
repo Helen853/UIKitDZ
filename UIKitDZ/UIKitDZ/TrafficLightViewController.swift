@@ -1,12 +1,11 @@
-// ViewController.swift
+// TrafficLightViewController.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
 /// класс
-class ViewController: UIViewController {
+class TrafficLightViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        printContent("")
     }
 }
