@@ -3,9 +3,5 @@
 
 import UIKit
 
-/// класс
-class TrafficLightViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
+/// Экран светофора
+class TrafficLightViewController: UIViewController {}
