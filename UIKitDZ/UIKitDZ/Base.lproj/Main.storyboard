@@ -58,6 +58,15 @@
                                     <constraint firstItem="vKW-Ls-QyQ" firstAttribute="width" secondItem="loi-TS-efH" secondAttribute="width" id="z2g-kF-cwc"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh8-Pe-lex">
+                                <rect key="frame" x="232" y="719" width="109" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next traffic"/>
+                                <connections>
+                                    <segue destination="b89-gE-NFQ" kind="show" id="R6d-Q2-Wef"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HTe-O8-qbl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,6 +80,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-434.35114503816794" y="-156.33802816901408"/>
+        </scene>
+        <!--Second Traffic Light View Controller-->
+        <scene sceneID="Whn-gs-ZNp">
+            <objects>
+                <viewController id="b89-gE-NFQ" customClass="SecondTrafficLightViewController" customModule="UIKitDZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jwU-w0-Gt0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="iHq-gS-al1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sBA-jU-jMF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vF4-hG-SXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="-135"/>
         </scene>
     </scenes>
     <resources>

@@ -4,4 +4,4 @@
 import UIKit
 
 /// Экран светофора
-class TrafficLightViewController: UIViewController {}
+final class TrafficLightViewController: UIViewController {}
